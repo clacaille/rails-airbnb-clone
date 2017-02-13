@@ -10,21 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213133728) do
+ActiveRecord::Schema.define(version: 20170213141323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "surfers"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "user_id"
+    t.integer  "camp_id"
+    t.boolean  "accepted"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["camp_id"], name: "index_bookings_on_camp_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
+
   create_table "camps", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "country"
-    t.string   "city"
-    t.string   "long"
-    t.string   "lat"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "price"
+    t.string   "address"
     t.index ["user_id"], name: "index_camps_on_user_id", using: :btree
   end
 
@@ -45,5 +56,7 @@ ActiveRecord::Schema.define(version: 20170213133728) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "bookings", "camps"
+  add_foreign_key "bookings", "users"
   add_foreign_key "camps", "users"
 end
