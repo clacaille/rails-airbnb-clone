@@ -34,6 +34,8 @@ before_action :set_camp, only: [:show, :edit, :update, :destroy]
   end
 
   def destroy
+    @camp.destroy
+    redirect_to camps_path
   end
 
   private
