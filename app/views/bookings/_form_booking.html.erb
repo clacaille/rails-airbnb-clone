@@ -1,0 +1,6 @@
+<%= simple_form_for([ @camp, @booking ]) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :surfers %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

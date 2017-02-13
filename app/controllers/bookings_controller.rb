@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_camps, only: [:new, :create, :destroy, :update]
   before_action :set_booking, only: [:edit, :update, :show, :destroy]
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user: current_user)
   end
 
   def show
@@ -15,8 +15,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.camp = @camp
+    @booking.user = current_user
     if @booking.save
-        redirect_to camp_path(@camp)
+        redirect_to booking_path(@camp)
       else
         render :new
     end
@@ -44,7 +45,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :surfer, :camp_id)
+    params.require(:booking).permit(:start_date, :end_date, :surfers)
   end
 
   def set_camps
