@@ -1,3 +1,5 @@
 <h1>My Profile</h1>
 <%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
 <p> <%= @user.first_name %> <%= @user.last_name %> </p>
+
+<%= link_to "Edit your profil", edit_user_path %>
