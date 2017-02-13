@@ -13,6 +13,7 @@ before_action :set_camp, only: [:show, :edit, :update, :destroy]
 
   def create
     @camp = Camp.new(camp_params)
+    @camp.user = current_user
     if @camp.save
       redirect_to camp_path(@camp)
     else
