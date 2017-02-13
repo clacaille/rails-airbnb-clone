@@ -2,3 +2,9 @@
 
 <h1><%= @camp.title %></h1>
 <p><%= @camp.description %></p>
+
+
+<%= link_to 'Edit Surf Camp', edit_camp_path %>
+<br>
+
+<%= link_to 'Delete Surf Camp', camp_path(@camp), method: :delete %>
