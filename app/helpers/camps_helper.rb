@@ -1,2 +1,2 @@
-module CampHelper
+module CampsHelper
 end
