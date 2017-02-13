@@ -1,0 +1,10 @@
+<h1>La liste des camps disponibles </h1>
+
+
+<% @camps.each do |camp| %>
+<ul>
+  <li> <%= camp.title %> - <%= camp.description %> <%= camp.price %>$</li>
+</ul>
+
+<% end %>
+
