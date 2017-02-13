@@ -1,0 +1,11 @@
+<h1>My bookings</h1>
+
+<% @bookings.each do |booking| %>
+  <ul>
+    <li><%= booking.camp.title %></li>
+    <li><%= booking.start_date %></li>
+    <li><%= booking.end_date %></li>
+    <li><%= booking.surfers %></li>
+    <li><%= booking.accepted %></li>
+  </ul>
+<% end %>

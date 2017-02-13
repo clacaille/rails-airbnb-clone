@@ -4,7 +4,4 @@
 <p><%= @camp.description %></p>
 
 
-<%= link_to 'Edit Surf Camp', edit_camp_path %>
-<br>
-
-<%= link_to 'Delete Surf Camp', camp_path(@camp), method: :delete %>
+<%= link_to 'Book now !', new_camp_booking_path(@camp)  %>
