@@ -3,6 +3,8 @@
   <%= f.input :description, placeholder: "7 days to become a surf master. Learn to surf with John John Florence, triple wold-champion!", :class => "form-field" %>
   <%= f.input :price, placeholder: "1000$", :class => "form-field" %>
   <%= f.input :address, placeholder: "76 California st, 03114 Malibu", :class => "form-field" %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
 

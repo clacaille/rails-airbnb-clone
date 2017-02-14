@@ -1,0 +1,18 @@
+.camp-details {
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+}
+
+.img-camp {
+  flex: 1;
+  display: center;
+}
+
+.description-camp {
+  flex: 2;
+}
+
+.price-camp {
+  flex: 1;
+}
