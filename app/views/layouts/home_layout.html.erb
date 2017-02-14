@@ -9,15 +9,13 @@
     <title>Surfcamps</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag     'application', media: 'all' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
 
   </head>
   <body>
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar' %>
-    <div class="container">
     <%= yield %>
-    </div>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
