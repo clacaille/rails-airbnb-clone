@@ -1,1 +1,17 @@
-// Your footer style
+footer {
+  position: relative;
+
+  .footer-content {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 1px;
+  }
+
+  ul {
+    font-size: 20px;
+  }
+}
+
+
+
