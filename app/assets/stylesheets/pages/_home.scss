@@ -4,3 +4,39 @@
   max-width: 70%;
   height: auto;
 }
+
+.map-button {
+    background-color: #F78AE0;
+    border: none;
+    color: white;
+    padding: 7px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 4px
+}
+
+.map-button:hover{
+    background-color: #ED33C5;
+    border: none;
+    color: white;
+    padding: 7px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 4px
+}
+
+#america {
+  position: absolute;
+  top: 176px;
+  left: 140px;
+}
+
+#america-latina {
+  position: absolute;
+  bottom: 100px;
+  left: 240px;
+}
