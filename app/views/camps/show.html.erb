@@ -4,8 +4,8 @@
 
 <h3>Book now !</h3>
 <%= simple_form_for([ @camp, @booking ]) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.input :start_date, as: :string, input_html: { class: "datepicker" }, placeholder: 'Pick a starting date' %>
+  <%= f.input :end_date, as: :string, input_html: { class: "datepicker" }, placeholder: 'Pick an ending date' %>
   <%= f.input :surfers %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
