@@ -1,7 +1,43 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('background.jpg');">
+
+<div class="container">
+<div class="text-center">
+
 <h1>My Profile</h1>
-<%= cl_image_tag @user.photo, height: 300, width: 400, crop: :fill %>
-<p> <%= @user.first_name %> <%= @user.last_name %> </p>
+<%= cl_image_tag @user.photo, height: 250, width: 300, crop: :fill %>
+<h2> <%= @user.first_name %> <%= @user.last_name %> </h2>
 
-<%= link_to "Edit your profile", edit_user_path %>
+<div>
+<div class="row">
+<div class="col-sm-12">
+<%= button_to "Edit your profile", edit_user_path, class: "btn btn-primary btn-lg" %>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
 
-<%= link_to 'Créer un nouveau Surf camp', new_camp_path %>
+<%= button_to 'Create a Surf Camp', new_camp_path, class: "btn btn-primary btn-lg btn-block" %></%>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card text-center ">
+    <ul class="list-inline">
+      <li class="text-center">
+        <a href="https://www.facebook.com">
+          <i class="fa fa-facebook"> </i>
+          Facebook
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/futurebikini/">
+          <i class="fa fa-instagram"> </i>
+          Instagram
+        </a>
+      </li>
+    </ul>
+    </div>
+    </div>
+
+

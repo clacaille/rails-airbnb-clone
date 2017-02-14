@@ -13,6 +13,7 @@
   position: absolute;
   right: 10px;
   top: 10px;
+  border-radius: 4px;
 }
 .card-title {
   font-size: 20px;
@@ -45,6 +46,16 @@
   background: black;
   opacity: 0;
 }
-.card-link:hover{
+.card-link:hover {
   opacity: 0.1;
 }
+
+
+
+
+
+
+
+
+
+
