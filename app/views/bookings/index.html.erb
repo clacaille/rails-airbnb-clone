@@ -2,10 +2,11 @@
 
 <% @bookings.each do |booking| %>
   <ul>
-    <li><%= booking.camp.title %></li>
-    <li><%= booking.start_date %></li>
-    <li><%= booking.end_date %></li>
-    <li><%= booking.surfers %></li>
-    <li><%= booking.accepted %></li>
+    <li><%= booking.camp.title %>
+        <%= booking.start_date %>
+        <%= booking.end_date %>
+        <%= booking.accepted %>
+        <%= link_to "Edit my booking", edit_booking_path(booking)  %>
+    </li>
   </ul>
 <% end %>

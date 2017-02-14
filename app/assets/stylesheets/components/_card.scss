@@ -2,6 +2,7 @@
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
+  background-color: #90F2FF;
   color: white;
   position: relative;
   padding: 10px;
@@ -13,6 +14,9 @@
   right: 10px;
   top: 10px;
   border-radius: 4px;
+}
+.card-title {
+  font-size: 20px;
 }
 .card-category {
   position: absolute;
