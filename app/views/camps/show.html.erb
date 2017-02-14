@@ -2,27 +2,10 @@
 
 <h1><%= @camp.title %></h1>
 
-<div class="flexbox">
-  <div class="resize-img"><%= image_tag "test.jpg", height: "150", width: "300" %></div>
+  <%= image_tag "test.jpg" %>
   <p>Description : <%= @camp.description %></p>
   <p><%= @camp.price %>$</p>
 </div>
-
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-sm-3">
-      <%= image_tag "test.jpg"%>
-    </div>
-     <div class="col-sm-6">
-      <p>Description : <%= @camp.description %></p>
-    </div>
-    <div class="col-sm-3">
-      <p><%= @camp.price %>$</p>
-    </div>
-  </div>
-</div> -->
-
-
 
 
 <h3>Bookings</h3>

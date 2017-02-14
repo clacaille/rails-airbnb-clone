@@ -2,6 +2,8 @@ class BookingsController < ApplicationController
   before_action :set_camps, only: [:new, :create]
   before_action :set_booking, only: [:edit, :update, :show, :destroy]
 
+  layout "application"
+
   def index
     @bookings = Booking.where(user: current_user)
   end
