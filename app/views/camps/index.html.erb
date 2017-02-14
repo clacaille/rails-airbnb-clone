@@ -1,10 +1,13 @@
-<h1>La liste des camps disponibles </h1>
-
+<h1>My Camps</h1>
 
 <% @camps.each do |camp| %>
 <ul>
-  <li> <%= camp.title %> - <%= camp.description %> <%= camp.price %>$</li>
+  <li><%= camp.title %>
+      <%= camp.description %>
+      <%= camp.price %>$
+      <%= link_to "See more", camp_path(camp) %>
+  </li>
 </ul>
-
 <% end %>
+
 

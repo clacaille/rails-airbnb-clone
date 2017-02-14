@@ -3,5 +3,8 @@
 <h1><%= @camp.title %></h1>
 <p><%= @camp.description %></p>
 
+<h2></h2>
 
-<%= link_to 'Book now !', new_camp_booking_path(@camp)  %>
+
+<%= link_to 'Edit your Camp', edit_camp_path %>
+<%= link_to 'Delete your Camp', camp_path, method: :delete,  data: { confirm: "Are you sure you want to delete this camp?" }, class: "btn btn-danger" %>
