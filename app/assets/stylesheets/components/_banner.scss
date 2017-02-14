@@ -13,6 +13,7 @@
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+
 }
 .banner p {
   font-size: 20px;
@@ -20,3 +21,27 @@
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
 }
+
+.banner-user {
+  position: relative;
+  color: white;
+  height: 35vh;
+  background-color: #6EB6FF;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.profil-edit {
+  position: absolute;
+  bottom: 1px;
+  right: 10px;
+}
+
+.user-infos {
+  position: absolute;
+  top: 90px;
+  left: 200px;
+}
+
+
