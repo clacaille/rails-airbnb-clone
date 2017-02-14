@@ -2,9 +2,9 @@
 
 
 <% @camps.each do |camp| %>
-<ul>
-  <li> <%= camp.title %> - <%= camp.description %> <%= camp.price %>$</li>
-</ul>
+<div class="card">
+ <%= camp.title %> - <%= camp.description %> <%= camp.price %>$
+</div>
 
 <% end %>
 
