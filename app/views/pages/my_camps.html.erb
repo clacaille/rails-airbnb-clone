@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
       <% @camps.each do |camp| %>
-      <%= link_to camp_path(camp) do %>
+      <%= link_to my_camp_path(camp) do %>
         <div class="card">
            <div class ="card-title"><%= camp.title %></div>
            <div class= "card-description"> <%= camp.description %></div>
