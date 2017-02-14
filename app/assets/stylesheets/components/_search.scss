@@ -22,7 +22,7 @@
   color: white;
   background-color: transparent;
   outline: none;
-
+  font-family: "Fredoka One";
 }
 
 .search__input::-webkit-input-placeholder {
@@ -52,12 +52,12 @@
   display: none;
 }
 
-.search__info {
+.search__info   {
   font-size: 90%;
-  font-weight: bold;
   display: block;
   width: 100%;
   margin: 0 auto;
   padding: 0.85em 0;
   text-align: right;
+  font-family: "Fredoka One";
 }
