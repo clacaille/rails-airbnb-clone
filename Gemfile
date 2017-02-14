@@ -19,6 +19,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'carrierwave'
+gem 'rails-assets-bootstrap-datepicker', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'binding_of_caller'
