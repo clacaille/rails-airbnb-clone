@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :camps do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :delete, :show]
+  resources :bookings, only: [:index, :destroy, :show, :edit, :update]
 end

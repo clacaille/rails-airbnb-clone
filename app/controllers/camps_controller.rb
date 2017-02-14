@@ -1,7 +1,7 @@
 class CampsController < ApplicationController
 before_action :set_camp, only: [:show, :edit, :update, :destroy]
   def index
-    @camps = Camp.all
+    @camps = Camp.where(user: current_user)
   end
 
   def show
