@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_camps, only: [:new, :create, :destroy, :update]
+  before_action :set_camps, only: [:new, :create]
   before_action :set_booking, only: [:edit, :update, :show, :destroy]
   def index
     @bookings = Booking.where(user: current_user)
@@ -27,10 +27,9 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.camp = @camp
     @booking.update(booking_params)
     if @booking.save
-      redirect_to
+      redirect_to bookings_path
     else
       render :new
     end
@@ -38,7 +37,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to camp_path(@camp)
+    redirect_to bookings_path
   end
 
 
