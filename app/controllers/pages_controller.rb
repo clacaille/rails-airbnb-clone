@@ -9,4 +9,9 @@ class PagesController < ApplicationController
     @camp = Camp.find(params[:id])
     @booking = Booking.new
   end
+
+  def my_camps
+    @camps = Camp.where(user: current_user)
+  end
+
 end
