@@ -17,7 +17,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     @camp = Camp.new(camp_params)
     @camp.user = current_user
     if @camp.save
-      redirect_to camp_path(@camp)
+      redirect_to my_camp_path(@camp)
     else
       render :new
     end
