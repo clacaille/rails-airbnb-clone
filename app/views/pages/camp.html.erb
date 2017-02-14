@@ -1,3 +1,8 @@
+<h1><%= @camp.title %></h1>
+<p><%= @camp.description %></p>
+<p><%= @camp.price %>$</p>
+
+<h3>Book now !</h3>
 <%= simple_form_for([ @camp, @booking ]) do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>

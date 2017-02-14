@@ -4,4 +4,9 @@ class PagesController < ApplicationController
   def home
     @camps = Camp.all
   end
+
+  def camp
+    @camp = Camp.find(params[:id])
+    @booking = Booking.new
+  end
 end

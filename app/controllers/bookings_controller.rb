@@ -8,18 +8,14 @@ class BookingsController < ApplicationController
   def show
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @booking.camp = @camp
     @booking.user = current_user
     if @booking.save
-        redirect_to booking_path(@camp)
+        redirect_to bookings_path
       else
-        render :new
+        render 'pages/camp'
     end
   end
 
@@ -31,7 +27,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      render :new
+      render :edit
     end
   end
 
@@ -44,7 +40,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :surfers)
+    params.require(:booking).permit(:start_date, :end_date, :surfers, :camp_id)
   end
 
   def set_camps
