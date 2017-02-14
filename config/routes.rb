@@ -8,4 +8,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index, :destroy, :show, :edit, :update]
+
+  get "camp/:id", to: "pages#camp", as: :camp_title
 end
