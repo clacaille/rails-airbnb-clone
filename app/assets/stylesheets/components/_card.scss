@@ -8,23 +8,21 @@
   padding: 10px;
   margin: 10px;
   border-radius: 4px;
+  text-decoration : none;
+  box-shadow: 6px 6px 6px #F1F1F1;
 }
+
 .card-user {
   position: absolute;
   right: 10px;
   top: 10px;
   border-radius: 4px;
 }
+
 .card-title {
-  font-size: 20px;
+  font-size: 30px;
 }
-.card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 10px;
-  text-transform: uppercase;
-}
+
 .card-description {
   position: absolute;
   bottom: 10px;
@@ -36,6 +34,24 @@
 .card-description p {
   font-size: 13px;
   }
+
+.card-price{
+  position: absolute;
+  top: 10px;
+  right:10px;
+  background-color: #F78AE0;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
 .card-link {
   position: absolute;
   top: 0;
@@ -49,13 +65,3 @@
 .card-link:hover {
   opacity: 0.1;
 }
-
-
-
-
-
-
-
-
-
-

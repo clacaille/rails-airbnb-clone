@@ -1,7 +1,8 @@
 <%= simple_form_for(@camp) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :address %>
+  <%= f.input :title, placeholder: "Amazing surf class", :class => "form-field" %>
+  <%= f.input :description, placeholder: "7 days to become a surf master. Learn to surf with John John Florence, triple wold-champion!", :class => "form-field" %>
+  <%= f.input :price, placeholder: "1000$", :class => "form-field" %>
+  <%= f.input :address, placeholder: "76 California st, 03114 Malibu", :class => "form-field" %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
+

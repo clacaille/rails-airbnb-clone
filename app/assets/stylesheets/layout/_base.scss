@@ -1,37 +1,62 @@
 h1 {
 font-family:'Fredoka One', cursive;
 font-size: 40px;
-padding:10px;
+padding: 20px, 0;
+color: #4AF2A1;
 }
 
 h2 {
 font-family:'Fredoka One', cursive;
 font-size: 35px;
+color: #B0F566;
+
 }
 
 h3 {
 font-family:'Raleway', sans-serif;
 font-size: 30px;
+color: #90F2FF;
 }
 
 h4 {
 font-family:'Raleway', sans-serif;
 font-size: 25px;
+color: #484848;
 }
 
 h5 {
 font-family:'Raleway', sans-serif;
 font-size: 20px;
+color: #484848;
 }
 
 h6 {
 font-family:'Raleway', sans-serif;
 font-size: 20px;
+color: #484848;
 }
 
 p {
 font-family:'Raleway', sans-serif;
 font-size: 15px;
+color: #484848;
+}
+
+i{
+  color: #7098DA;
+}
+
+a:hover {
+text-decoration: none;
+}
+
+.btn-primary {
+  margin : 15px 0;
+}
+
+.flexbox{
+  display: flex;
+  justify-content: space-between;
 }
 
 
