@@ -3,7 +3,10 @@
 
 <% @camps.each do |camp| %>
 <div class="card">
- <%= camp.title %> - <%= camp.description %> <%= camp.price %>$
+ <div class ="card-title"><%= camp.title %></div>
+ <div class= "card-description"> <%= camp.description %>
+ <%= camp.price %>$
+ </div>
 </div>
 
 <% end %>
