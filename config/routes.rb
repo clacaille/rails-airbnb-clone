@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :destroy, :show, :edit, :update]
 
-  get "camp/:id", to: "pages#camp", as: :camp_title
+  get "camp/:id", to: "pages#camp", as: :my_camp
+  get "my_camps", to: "pages#my_camps", as: :my_camps
 end

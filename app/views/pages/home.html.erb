@@ -21,7 +21,7 @@
 </div>
 <div class="container text-center">
   <div class="explication">
-    <div class="h1"> How it works ?</div>
+    <div class="h1"> How it works</div>
       <div class="row">
         <div class="col-sm-4">
           <div class="discover">
@@ -53,7 +53,7 @@
   <div class="row">
     <% @camps.each do |camp| %>
     <div class="col-xs-12 col-sm-4">
-      <%= link_to camp_title_path(camp) do %>
+      <%= link_to camp_path(camp) do %>
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
         <div class="card-category">Popular</div>
         <div class="card-description">
@@ -65,5 +65,6 @@
     </div>
     <% end %>
   </div>
+    <h2><%= link_to 'All camps', camps_path %></h2>
   </div>
   </div>

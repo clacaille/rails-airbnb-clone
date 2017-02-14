@@ -1,10 +1,12 @@
 class CampsController < ApplicationController
 before_action :set_camp, only: [:show, :edit, :update, :destroy]
+skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @camps = Camp.where(user: current_user)
+    @camps = Camp.all
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -15,7 +17,7 @@ before_action :set_camp, only: [:show, :edit, :update, :destroy]
     @camp = Camp.new(camp_params)
     @camp.user = current_user
     if @camp.save
-      redirect_to camp_path(@camp)
+      redirect_to my_camp_path(@camp)
     else
       render :new
     end

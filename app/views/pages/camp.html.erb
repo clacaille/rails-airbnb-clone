@@ -1,11 +1,22 @@
-<h1><%= @camp.title %></h1>
-<p><%= @camp.description %></p>
-<p><%= @camp.price %>$</p>
+<div class="btn btn-info"><i class="fa fa-chevron-left" aria-hidden="true"></i><%= link_to ' Back to My Camps', camps_path %></div>
 
-<h3>Book now !</h3>
-<%= simple_form_for([ @camp, @booking ]) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :surfers %>
-  <%= f.submit class: "btn btn-primary" %>
+<h1><%= @camp.title %></h1>
+
+  <p>Description : <%= @camp.description %></p>
+  <p><%= @camp.price %>$</p>
+</div>
+
+
+<h3>Bookings</h3>
+<% @camp.bookings.each do |booking| %>
+<ul>
+  <li>
+    <%= booking.start_date %> -
+    <%= booking.end_date %> -
+    <%= booking.surfers %> surfers
+  </li>
+</ul>
 <% end %>
+
+<%= link_to 'Edit your Camp', edit_camp_path, class: "btn btn-primary" %>
+<%= link_to 'Delete your Camp', camp_path, method: :delete,  data: { confirm: "Are you sure you want to delete this camp?" }, class: "btn btn-danger" %>
