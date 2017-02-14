@@ -41,7 +41,7 @@ before_action :set_camp, only: [:show, :edit, :update, :destroy]
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def camp_params
-    params.require(:camp).permit(:title, :description, :address, :price)
+    params.require(:camp).permit(:title, :description, :address, :price, :photo, :photo_cache)
   end
 
   def set_camp
