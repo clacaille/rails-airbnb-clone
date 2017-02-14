@@ -1,16 +1,14 @@
 <div class="banner">
   <div class="banner-content">
-
- <div class="search">
-      <div class="search__inner search__inner--up">
-        <form class="search__form" action="">
-          <input class="search__input" name="search" type="search" placeholder="Search"/>
-          <span class="search__info">Book your next Surf Camp</span>
-        </form>
-      </div>
-
-    </div><!-- /search -->
-  <div class="map">
+   <div class="search"><!-- /search -->
+    <div class="search__inner search__inner--up">
+      <form class="search__form" action="">
+        <input class="search__input" name="search" type="search" placeholder="Search"/>
+        <span class="search__info">Book your next Surf Camp</span>
+      </form>
+    </div>
+  </div><!-- /search -->
+  <div class="map"><!-- /map -->
     <%= image_tag "map.png" %>
     <%= link_to "America", root_path, class: "map-button", id: "america" %>
     <%= link_to "America-latina", root_path, class: "map-button", id: "america-latina"%>
@@ -18,20 +16,44 @@
     <%= link_to "Australia", root_path, class: "map-button", id: "australia"%>
     <%= link_to "Asia", root_path, class: "map-button", id: "asia"%>
     <%= link_to "Africa", root_path, class: "map-button", id: "africa"%>
-  </div>
-  </div>
-
+  </div><!-- /map -->
 </div>
-
-
-<div class="container">
+</div>
+<div class="container text-center">
+  <div class="explication">
+    <div class="h1"> How it's works ?</div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="discover">
+            <h3>Discover</h3>
+            <p>Find the bests SurfCamp</p>
+            <%= image_tag "discover.png", class: "disco" %>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="discover">
+            <h3>Contact</h3>
+            <p>Book your Surf Camp online</p>
+            <%= image_tag "contact.png", class: "disco" %>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="discover">
+            <h3>Surf</h3>
+            <p>Go to your next surf trip</p>
+            <%= image_tag "surf.png", class: "disco" %>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="h1"> Best SurfCamps</div>
   <div class="row">
     <% @camps.each do |camp| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
         <div class="card-category">Popular</div>
         <div class="card-description">
-        <h2><%= camp.title %></h2>
+          <h2><%= camp.title %></h2>
         </div>
         <img class="card-user avatar" src="user.jpg">
         <a class="card-link" href="#" ></a>
