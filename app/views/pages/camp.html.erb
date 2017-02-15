@@ -9,8 +9,9 @@
     <div class="price-look"><%= @camp.price %></div>
 
 
-
-<h3>Bookings</h3>
+<div class="book-recap">
+<h3>Bookings for your surf camp</h3>
+<br>
 <% @camp.bookings.each do |booking| %>
 <ul>
   <li>
@@ -21,12 +22,12 @@
     <%= link_to "Confirm Booking", my_camp_path(@camp, booking: { id: booking.id, accepted: true }), method: :put %>
   </li>
 </ul>
-
 <% end %>
 
 
 <%= link_to 'Edit your Camp', edit_camp_path, class: "btn btn-primary" %>
 <%= link_to 'Delete your Camp', camp_path, method: :delete,  data: { confirm: "Are you sure you want to delete this camp?" }, class: "btn btn-danger" %>
+</div>
 </div>
 
 
