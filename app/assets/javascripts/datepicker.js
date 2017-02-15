@@ -1,8 +1,6 @@
 $( document ).ready(function() {
   $('.datepicker').datepicker({
-    format: 'mm/dd/yyyy',
+    format: 'dd/mm/yyyy',
     startDate: 'd',
-    showOnFocus: true,
-    todayBtn: 'linked'
   });
 });
