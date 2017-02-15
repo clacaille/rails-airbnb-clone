@@ -14,14 +14,14 @@ $(document).ready(function() {
 
 function onPlaceChanged() {
   var place = this.getPlace();
-  var components = getAddressComponents(place);
+  //var components = getAddressComponents(place);
 
-  $('#camp_address').trigger('blur').val(components.address);
-  $('#camp_zip_code').val(components.zip_code);
-  $('#camp_city').val(components.city);
-  if (components.country_code) {
-    $('#camp_country').val(components.country_code);
-  }
+  //$('#camp_address').trigger('blur').val(components.address);
+  //$('#camp_zip_code').val(components.zip_code);
+  //$('#camp_city').val(components.city);
+  //if (components.country_code) {
+    //$('#camp_country').val(components.country_code);
+  //}
 }
 
 function getAddressComponents(place) {
