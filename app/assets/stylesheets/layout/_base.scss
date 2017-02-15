@@ -66,17 +66,25 @@ color: #4D5052;
     background-color: #F78AE0;
     padding: 4px;
     border-radius: 4px;
-    width: auto;
+    display:inline;
     text-align: center;
     margin: 15px 0;
 }
 
 // --- forms and recap grey boxes---
 .book-form, .book-recap{
-  background-color: #F0F0F1;
+  background-color: #F5F8FA;
   border-radius:4px;
   margin : 20px 0;
   padding: 10px;
+}
+
+.sign-form-look{
+  background-color: #F5F8FA;
+  border-radius:4px;
+  margin : 20px 0;
+  padding: 10px;
+  display: inline;
 }
 
 
