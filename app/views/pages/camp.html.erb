@@ -19,7 +19,7 @@
     <%= booking.end_date.strftime('%d/%m/%Y') %> -
     <%= booking.surfers %> surfers
     <%=  %>
-    <%= link_to "Confirm Booking", my_camp_path(@camp, booking: { id: booking.id, accepted: true }), method: :put %>
+    <div class="btn btn-primary"><%= link_to "Confirm Booking", my_camp_path(@camp, booking: { id: booking.id, accepted: true }), method: :put %></div>
   </li>
 </ul>
 <% end %>
