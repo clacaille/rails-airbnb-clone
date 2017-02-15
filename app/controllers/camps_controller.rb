@@ -13,7 +13,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def show
     @booking = Booking.new
-    @camp_coordinates = { lat: @flat.latitude, lng: @flat.longitude }
+    @camp_coordinates = { lat: @camp.latitude, lng: @camp.longitude }
   end
 
   def new
