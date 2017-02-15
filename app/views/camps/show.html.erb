@@ -9,3 +9,13 @@
   <%=f.input :surfers, collection: 1..12, selected: 1, label: "For how many surfers?" %>
   <%= f.submit class: "btn btn-primary" %>
 <% end %>
+
+<!-- Js mapping -->
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = <%= raw @camp_coordinates.to_json %>;
+      alert('Camp coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>

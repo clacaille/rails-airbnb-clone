@@ -11,6 +11,10 @@ gem 'devise'
 gem 'cloudinary', '1.1.0'
 gem 'omniauth-facebook'
 gem "geocoder"
+gem "coffee-rails"
+gem "gmaps4rails"
+gem "rails-assets-underscore", source: 'https://rails-assets.org'
+
 
 gem 'sass-rails'
 gem 'jquery-rails'
