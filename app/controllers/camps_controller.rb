@@ -27,8 +27,11 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   def create
     puts "TOTO IS GOOD"
     @camp = Camp.new(camp_params)
-    @camp.user = current_user    binding.pry
+    puts "TOTO IS GOOD2"
+    @camp.user = current_user
+    puts "TOTO IS GOOD3"
     save_boolean = @camp.save
+    puts "TOTO IS GOOD4"
     p @camp.errors.messages
     if save_boolean
       redirect_to my_camp_path(@camp)
