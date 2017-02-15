@@ -1,5 +1,59 @@
+
+<div class="btn btn-info"><i class="fa fa-chevron-left" aria-hidden="true"></i><%= link_to ' Back to My Bookings', bookings_path %></div>
+
 <h1><%= @booking.camp.title %></h1>
-<p><%= @booking.camp.description %></p>
-<p><%= @booking.camp.price %>$</p>
+
+  <h4><%= @booking.camp.description %></h4>
+  <p><%= @booking.camp.address %></p>
+  <p><%= @booking.camp.price %> $</p>
+
+
+<ul>
+  <li>
+    <%= @booking.start_date %> -
+    <%= @booking.end_date %> -
+    <%= @booking.surfers %> surfers
+  </li>
+</ul>
+
+
+
+<div id="map" style="width: 100%; height: 600px;"></div>
+
+
+<!-- Js mapping -->
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+        markers = handler.addMarkers(<%= raw @hash.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        if (markers.length == 0) {
+          handler.getMap().setZoom(2);
+        } else if (markers.length == 1) {
+          handler.getMap().setZoom(14);
+        }
+      });
+    });
+  <% end %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
