@@ -5,7 +5,14 @@
     <li><%= booking.camp.title %>
         <%= booking.start_date.strftime('%d/%m/%Y') %>
         <%= booking.end_date.strftime('%d/%m/%Y') %>
-        <%= booking.accepted %>
+        <%= elper(booking) %>
+        <p>
+          <% if booking.accepted %>
+            Accepted
+          <% else %>
+            Pending
+          <% end %>
+        </p>
         <%= link_to "Edit my booking", edit_booking_path(booking)  %>
     </li>
   </ul>
