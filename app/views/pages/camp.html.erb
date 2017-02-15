@@ -11,13 +11,12 @@
 <% @camp.bookings.each do |booking| %>
 <ul>
   <li>
+    <%= booking %>
     <%= booking.start_date.strftime('%d/%m/%Y') %> -
     <%= booking.end_date.strftime('%d/%m/%Y') %> -
     <%= booking.surfers %> surfers
-    <%= simple_form_for( @booking ) do |f| %>
-      <%= f.input :accepted, as: :hidden, input_html: { value: true } %>
-      <%= f.submit, 'Accept Booking', class: "btn btn-primary" %>
-    <% end %>
+    <%=  %>
+    <%= link_to "Confirm Booking", my_camp_path(@camp, booking: { id: booking.id, accepted: true }), method: :put %>
   </li>
 </ul>
 <% end %>
