@@ -11,9 +11,12 @@
 <% @camp.bookings.each do |booking| %>
 <ul>
   <li>
-    <%= booking.start_date %> -
-    <%= booking.end_date %> -
+    <%= booking %>
+    <%= booking.start_date.strftime('%d/%m/%Y') %> -
+    <%= booking.end_date.strftime('%d/%m/%Y') %> -
     <%= booking.surfers %> surfers
+    <%=  %>
+    <%= link_to "Confirm Booking", my_camp_path(@camp, booking: { id: booking.id, accepted: true }), method: :put %>
   </li>
 </ul>
 <% end %>
