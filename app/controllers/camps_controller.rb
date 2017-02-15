@@ -25,9 +25,10 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   end
 
   def create
-    @camp = Camp.new(camp_params)
-    @camp.user = current_user
+    puts "TOTO IS GOOD"
     binding.pry
+    @camp = Camp.new(camp_params)
+    @camp.user = current_user    binding.pry
     if @camp.save
       redirect_to my_camp_path(@camp)
     else
