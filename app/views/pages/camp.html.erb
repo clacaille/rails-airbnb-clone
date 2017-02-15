@@ -18,8 +18,13 @@
     <%= booking.start_date.strftime('%d/%m/%Y') %> -
     <%= booking.end_date.strftime('%d/%m/%Y') %> -
     <%= booking.surfers %> surfers
-    <%=  %>
-    <div class="btn btn-primary"><%= link_to "Confirm Booking", my_camp_path(@camp, booking: { id: booking.id, accepted: true }), method: :put %></div>
+
+    <% if booking.accepted %>
+    <%= link_to "Delete Booking", my_camp_path(@camp, booking: { id: booking.id, accepted: true }), method: :put, class: "btn btn-warning" %>
+    <% else %>
+     <%= link_to "Confirm Booking", my_camp_path(@camp, booking: { id: booking.id, accepted: true }), method: :put, class: "btn btn-success" %>
+     <% end %>
+
   </li>
 </ul>
 <% end %>

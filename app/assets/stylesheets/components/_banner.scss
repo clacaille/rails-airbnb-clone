@@ -69,5 +69,14 @@
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 
-
-
+.banner-detail {
+  color: white;
+  text-align: center;
+  height: 65vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  background-color: #6EB6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
