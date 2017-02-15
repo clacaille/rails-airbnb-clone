@@ -2,17 +2,29 @@
 
 <div class="container">
   <div class="row">
-      <% @camps.each do |camp| %>
-      <%= link_to camp_path(camp) do %>
-        <div class="card">
-           <div class ="card-title"><%= camp.title %></div>
-           <div class= "card-description"> <%= camp.description %></div>
-           <div class="card-price"><%= camp.price %>$</div>
+     <!--  map - 1/3 -->
+    <div class="col-xs-12 col-sm-4">
+      <h1>Here goes the map</h1>
+    </div>
+    <!--  2 camps cards - 2/3 -->
+    <div class="col-xs-12 col-sm-8">
+        <% @camps.each do |camp| %>
+         <div class="col-xs-12 col-sm-6">
+        <%= link_to camp_path(camp) do %>
+          <div class="card">
+             <div class ="card-title"><%= camp.title %></div>
+             <div class= "card-description"> <%= camp.description %></div>
+             <div class="card-price"><%= camp.price %>$</div>
+          </div>
+        <% end %>
         </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
+
+
+
 
 
 
