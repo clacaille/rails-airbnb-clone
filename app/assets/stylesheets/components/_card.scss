@@ -12,6 +12,10 @@
   box-shadow: 6px 6px 6px #F1F1F1;
 }
 
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 .card-user {
   position: absolute;
   right: 10px;
@@ -79,6 +83,10 @@
   text-decoration : none;
   box-shadow: 6px 6px 6px #F1F1F1;
 
+}
+
+.card-booking:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .card-booking a {
