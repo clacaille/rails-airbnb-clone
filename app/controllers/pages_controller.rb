@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home, :filter
+  skip_before_action :authenticate_user!, only: [ :home, :filter ]
   before_action :set_camp, only: [ :camp, :confirm_booking ]
   layout "home_layout"
   def home
