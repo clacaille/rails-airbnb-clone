@@ -1,26 +1,31 @@
-<h1>All Camps</h1>
+<div class="camp-list-padded">
+  <h1>All Camps</h1>
 
-<div class="container">
-  <div class="row">
-     <!--  map - 1/2 -->
-    <div class="col-xs-12 col-sm-6">
-      <h1>Here goes the map</h1>
-      <!-- map GA-->
-      <div id="map" style="width: 100%; height: 600px;"></div>
-    </div>
-    <!--  Camp card - 1/2 -->
-    <div class="col-xs-12 col-sm-6">
-        <% @camps.each do |camp| %>
-        <%= link_to camp_path(camp) do %>
-          <div class="card">
-             <div class ="card-title"><%= camp.title %></div>
-             <div class= "card-description"> <%= camp.description %></div>
-             <div class="card-price"><%= camp.price %>$</div>
+  <div class="container">
+    <div class="row">
+
+        <!--  Camp card - 1/2 -->
+
+          <div class="col-md-6 camp-column ">
+              <% @camps.each do |camp| %>
+              <%= link_to camp_path(camp) do %>
+                <div class="card">
+                   <div class ="card-title"><%= camp.title %></div>
+                   <div class= "card-description"> <%= camp.description %></div>
+                   <div class="card-price"><%= camp.price %>$</div>
+                </div>
+              <% end %>
+            <% end %>
           </div>
-        <% end %>
-      <% end %>
+
+         <!--  map - 1/2 -->
+        <div class="col-md-6 map-column" >
+          <!-- map GA-->
+          <div id="map" style="width: 100%; height: 600px;"></div>
+        </div>
+
+      </div>
     </div>
-  </div>
 </div>
 
 <!-- JS GA MAP -->
