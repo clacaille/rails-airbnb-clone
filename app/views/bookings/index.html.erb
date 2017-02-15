@@ -6,13 +6,7 @@
         <%= booking.start_date.strftime('%d/%m/%Y') %>
         <%= booking.end_date.strftime('%d/%m/%Y') %>
         <%= elper(booking) %>
-        <p>
-          <% if booking.accepted %>
-            Accepted
-          <% else %>
-            Pending
-          <% end %>
-        </p>
+        <%= link_to "Confirm Booking", booking_path(booking:{accepted: true}), method: :put %>
         <%= link_to "Edit my booking", edit_booking_path(booking)  %>
     </li>
   </ul>
