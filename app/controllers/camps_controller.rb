@@ -3,10 +3,17 @@ before_action :set_camp, only: [:show, :edit, :update, :destroy]
 skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @camps = Camp.all
+    @camps = Camp.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
+      marker.lat camp.latitude
+      marker.lng camp.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def show
     @booking = Booking.new
+    @camp_coordinates = { lat: @camp.latitude, lng: @camp.longitude }
   end
 
   def new
