@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  var flat_address = $('#flat_address').get(0);
+  var camp_address = $('#camp_address').get(0);
 
-  if (flat_address) {
-    var autocomplete = new google.maps.places.Autocomplete(flat_address, { types: ['geocode'] });
+  if (camp_address) {
+    var autocomplete = new google.maps.places.Autocomplete(camp_address, { types: ['geocode'] });
     google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
     google.maps.event.addDomListener(flat_address, 'keydown', function(e) {
       if (e.keyCode == 13) {
@@ -16,7 +16,7 @@ function onPlaceChanged() {
   var place = this.getPlace();
   var components = getAddressComponents(place);
 
-  $('#flat_address').trigger('blur').val(components.address);
+  $('#camp_address').trigger('blur').val(components.address);
   $('#flat_zip_code').val(components.zip_code);
   $('#flat_city').val(components.city);
   if (components.country_code) {
