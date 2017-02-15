@@ -13,7 +13,10 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def show
     @booking = Booking.new
-    @camp_coordinates = { lat: @camp.latitude, lng: @camp.longitude }
+    @hash = Gmaps4rails.build_markers(@camp) do |camp, marker|
+      marker.lat camp.latitude
+      marker.lng camp.longitude
+    end
   end
 
   def new
