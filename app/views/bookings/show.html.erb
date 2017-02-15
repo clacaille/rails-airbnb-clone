@@ -1,20 +1,26 @@
 
 <div class="btn btn-info"><i class="fa fa-chevron-left" aria-hidden="true"></i><%= link_to ' Back to My Bookings', bookings_path %></div>
 
-<h1><%= @booking.camp.title %></h1>
+<div class="container">
+  <div class="row">
 
-  <h4><%= @booking.camp.description %></h4>
-  <p><%= @booking.camp.address %></p>
-  <p><%= @booking.camp.price %> $</p>
+    <div class= "col-md-6 camp-summary">
+      <h1><%= @booking.camp.title %></h1>
 
+      <div class="description-look"><%= @booking.camp.address %></div>
+      <div class="description-look"><%= @booking.camp.description %></div>
+      <div class="price-look"><%= @booking.camp.price %> $</div>
+    </div>
+    <div class="col-md-6 book-recap">
+      <p> Start date :
+          <%= @booking.start_date.strftime('%d/%m/%Y')  %></p>
+      <p> End date:
+          <%= @booking.end_date.strftime('%d/%m/%Y') %> </p>
+      <p> Number of surfers:   <%= @booking.surfers %> </p>
+    </div>
 
-<ul>
-  <li>
-    <%= @booking.start_date %> -
-    <%= @booking.end_date %> -
-    <%= @booking.surfers %> surfers
-  </li>
-</ul>
+  </div>
+</div>
 
 
 
