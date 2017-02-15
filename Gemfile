@@ -10,6 +10,7 @@ gem 'redis'
 gem 'devise'
 gem 'cloudinary', '1.1.0'
 gem 'omniauth-facebook'
+gem "geocoder"
 
 gem 'sass-rails'
 gem 'jquery-rails'
