@@ -3,8 +3,8 @@
 <% @bookings.each do |booking| %>
   <ul>
     <li><%= booking.camp.title %>
-        <%= booking.start_date %>
-        <%= booking.end_date %>
+        <%= booking.start_date.strftime('%d/%m/%Y') %>
+        <%= booking.end_date.strftime('%d/%m/%Y') %>
         <%= booking.accepted %>
         <%= link_to "Edit my booking", edit_booking_path(booking)  %>
     </li>
