@@ -54,28 +54,24 @@ text-decoration: none;
   margin : 15px 0;
 }
 
-
+// --- camp single view elements ---
 .description-look{
 font-size: 20px;
 font-weight: lighter;
 margin: 20px 0;
 color: #4D5052;
 
-
 }
-
 .price-look{
     background-color: #F78AE0;
     padding: 4px;
     border-radius: 4px;
-    width: 70px;
+    width: auto;
     text-align: center;
     margin: 15px 0;
 }
 
-.camp-summary{
-}
-
+// --- forms and recap grey boxes---
 .book-form, .book-recap{
   background-color: #F0F0F1;
   border-radius:4px;
