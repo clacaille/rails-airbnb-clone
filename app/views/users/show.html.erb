@@ -1,14 +1,15 @@
-
-<div class="banner-user">
-  <h1>My Profile</h1>
+<div class="container">
+  <div class="banner-user">
+    <h1>My Profile</h1>
     <%= cl_image_tag @user.photo, class: "avatar-account pic-account" %>
     <div class="user-infos">
-    <h3> <%= @user.first_name %> </h3>
-    <h3> <%= @user.last_name %> </h3>
+      <h3> <%= @user.first_name %> </h3>
+      <h3> <%= @user.last_name %> </h3>
     </div>
     <div class="profil-edit">
       <h2> <%= link_to 'Modifier mon profil', edit_user_path(@user)%></h2>
     </div>
-    </div>
+  </div>
+</div>
 
 
