@@ -1,13 +1,15 @@
 <h1>My bookings</h1>
-
-<% @bookings.each do |booking| %>
-  <ul>
-    <li><%= booking.camp.title %>
-        <%= booking.start_date.strftime('%d/%m/%Y') %>
-        <%= booking.end_date.strftime('%d/%m/%Y') %>
-        <%= elper(booking) %>
-        <%= link_to "Confirm Booking", booking_path(booking:{accepted: true}), method: :put %>
-        <%= link_to "Edit my booking", edit_booking_path(booking)  %>
-    </li>
-  </ul>
-<% end %>
+<div class="row">
+  <% @bookings.each do |booking| %>
+    <div class="card-booking">
+    <%= link_to camp_bookings_path(booking) do %>
+        <div class="card-title"><%= booking.camp.title %></div>
+            <div class="card-date"><%= booking.start_date.strftime('%d/%m/%Y') %>
+            <%= booking.end_date.strftime('%d/%m/%Y') %></div>
+            <div class="card-accepted"><%= elper(booking) %></div>
+            <div class="card-price"><%= booking.camp.price %>$</div>
+            <div class="card-description"><%= booking.camp.description %></div>
+        </div>
+    <% end %>
+  <% end %>
+</div>
