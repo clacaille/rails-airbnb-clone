@@ -1,6 +1,7 @@
 <h1>My bookings</h1>
 <div class="row">
 
+
 <% @bookings.each do |booking| %>
 
 <div class="card-booking">
@@ -13,21 +14,9 @@
         <div class="card-accepted"><%= booking.accepted %></div>
         <div class="card-price"><%= booking.camp.price %>$</div>
 
+
+
         </div>
-        <% end %>
-
-
-
-
-
     <% end %>
-    </div>
-
-
-
-
-
-
-
-
-
+  <% end %>
+</div>

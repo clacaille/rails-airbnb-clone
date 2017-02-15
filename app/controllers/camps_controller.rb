@@ -1,6 +1,7 @@
 class CampsController < ApplicationController
 before_action :set_camp, only: [:show, :edit, :update, :destroy]
 skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @camps = Camp.all
     @camps = Camp.where.not(latitude: nil, longitude: nil)
