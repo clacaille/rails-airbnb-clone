@@ -1,6 +1,6 @@
-<h1>My Camps</h1>
 <div class="container">
-  <div class="row">
+  <h1>My Camps</h1>
+
       <% @camps.each do |camp| %>
       <%= link_to my_camp_path(camp) do %>
         <div class="card">
@@ -10,5 +10,5 @@
         </div>
       <% end %>
     <% end %>
-  </div>
 </div>
+
