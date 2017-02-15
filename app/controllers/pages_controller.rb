@@ -21,6 +21,14 @@ class PagesController < ApplicationController
     render :camp
   end
 
+  def filter
+    @camps = Camp.near(params[:search], 1000)
+    @hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
+      marker.lat camp.latitude
+      marker.lng camp.longitude
+    end
+  end
+
   private
 
   def set_camp
