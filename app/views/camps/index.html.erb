@@ -1,31 +1,33 @@
-<div class="camp-list-padded">
-  <h1>All Camps</h1>
-
   <div class="container">
-    <div class="row">
+  <div class="camp-list-padded">
+    <h1>All Camps</h1>
 
-        <!--  Camp card - 1/2 -->
+    <div class="container">
+      <div class="row">
 
-          <div class="col-md-6 camp-column ">
-              <% @camps.each do |camp| %>
-              <%= link_to camp_path(camp) do %>
-                <div class="card">
-                   <div class ="card-title"><%= camp.title %></div>
-                   <div class= "card-description"> <%= camp.description %></div>
-                   <div class="card-price"><%= camp.price %>$</div>
-                </div>
+          <!--  Camp card - 1/2 -->
+
+            <div class="col-md-6 camp-column ">
+                <% @camps.each do |camp| %>
+                <%= link_to camp_path(camp) do %>
+                  <div class="card">
+                     <div class ="card-title"><%= camp.title %></div>
+                     <div class= "card-description"> <%= camp.description %></div>
+                     <div class="card-price"><%= camp.price %>$</div>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
+
+           <!--  map - 1/2 -->
+          <div class="col-md-6 map-column" >
+            <!-- map GA-->
+            <div id="map" style="width: 100%; height: 600px;"></div>
           </div>
 
-         <!--  map - 1/2 -->
-        <div class="col-md-6 map-column" >
-          <!-- map GA-->
-          <div id="map" style="width: 100%; height: 600px;"></div>
         </div>
-
       </div>
-    </div>
+  </div>
 </div>
 
 <!-- JS GA MAP -->
@@ -33,14 +35,20 @@
   <%= javascript_tag do %>
     $(document).ready(function() {
       var handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function() {
+      handler.buildMap({
+        provider: {
+          styles:
+          [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
+
+          },
+        internal: { id: 'map' } }, function() {
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
         if (markers.length == 0) {
           handler.getMap().setZoom(2);
         } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
+          handler.getMap().setZoom(10);
         }
       });
     });

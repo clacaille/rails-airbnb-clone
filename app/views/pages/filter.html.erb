@@ -1,30 +1,35 @@
-
+<div class="camp-list-padded">
 <div class="container">
+<h1>Your Search</h1>
+
+
   <div class="row">
+          <!--  Camp card - 1/2 -->
+
+          <div class="col-md-6 camp-column ">
+              <% @camps.each do |camp| %>
+              <%= link_to camp_path(camp) do %>
+                <div class="card">
+                   <div class ="card-title"><%= camp.title %></div>
+                   <div class= "card-description"> <%= camp.description %></div>
+                   <div class="card-price"><%= camp.price %>$</div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+
+         <!--  map - 1/2 -->
+        <div class="col-md-6 map-column" >
+          <!-- map GA-->
+          <div id="map" style="width: 100%; height: 600px;"></div>
+        </div>
+
+  </div>
+</div>
+</div>
 
 
-    <div class= "col-md-6 camp-summary">
-      <h1><%= @camp.title %></h1>
-      <div class="description-look"> <%= @camp.address %></div>
-      <div class="description-look"> <%= @camp.description %></div>
-      <div class="price-look"><%= @camp.price %>$</div>
-    </div>
-
-    <div class="col-md-6 book-form">
-      <h3>Book now !</h3>
-      <br>
-      <%= simple_form_for([ @camp, @booking ]) do |f| %>
-        <%= f.input :start_date, as: :string, input_html: { class: "datepicker" }, placeholder: 'Pick a starting date' %>
-        <%= f.input :end_date, as: :string, input_html: { class: "datepicker" }, placeholder: 'Pick an ending date' %>
-        <%=f.input :surfers, collection: 1..12, selected: 1, label: "For how many surfers?" %>
-        <%= f.submit "Book now" , class: "btn btn-primary" %>
-      <% end %>
-    </div>
-
-<div id="map" style="width: 100%; height: 600px;"></div>
-
-
-<!-- Js mapping -->
+<!-- JS GA MAP -->
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
@@ -35,21 +40,17 @@
           [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
 
           },
-        internal: { id: 'map' } }, function() {
+
+      internal: { id: 'map' } }, function() {
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
         if (markers.length == 0) {
           handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(12);
+        } else if (markers.length >= 1) {
+          handler.getMap().setZoom(7);
         }
       });
     });
   <% end %>
 <% end %>
-
-
- </div>
-</div>
-

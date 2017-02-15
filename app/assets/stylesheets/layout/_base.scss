@@ -3,6 +3,7 @@ font-family:'Fredoka One', cursive;
 font-size: 40px;
 padding: 20px, 0;
 color: #4AF2A1;
+text-shadow: 0 1px 3px rgba(0,0,0,0);
 }
 
 h2 {
@@ -53,8 +54,33 @@ text-decoration: none;
   margin : 15px 0;
 }
 
-.btn-info {
-  margin : 15px 0;
+
+.description-look{
+font-size: 20px;
+font-weight: lighter;
+margin: 20px 0;
+color: #4D5052;
+
+
+}
+
+.price-look{
+    background-color: #F78AE0;
+    padding: 4px;
+    border-radius: 4px;
+    width: 70px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.camp-summary{
+}
+
+.book-form{
+  background-color: #F0F0F1;
+  border-radius:4px;
+  margin : 20px 0;
+  padding: 10px;
 }
 
 

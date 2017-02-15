@@ -1,34 +1,24 @@
+<div class="container">
 <h1>My bookings</h1>
 <div class="row">
+
 
 <% @bookings.each do |booking| %>
 
 <div class="card-booking">
-<%= link_to camp_bookings_path(booking) do %>
+<%= link_to booking_path(booking) do %>
 
 
     <div class="card-title"><%= booking.camp.title %></div>
-        <div class="card-date"><%= booking.start_date %>
-        <%= booking.end_date %></div>
-        <div class="card-accepted"><%= booking.accepted %></div>
+        <div class="card-date"><%= booking.start_date.strftime('%d/%m/%Y') %>
+        <%= booking.end_date.strftime('%d/%m/%Y') %></div>
+        <div class="card-accepted"><%= elper(booking) %></div>
         <div class="card-price"><%= booking.camp.price %>$</div>
-        <div class="card-description"><%= booking.camp.description %></div>
+
+
 
         </div>
-        <% end %>
-
-
-
-
-
     <% end %>
-    </div>
-
-
-
-
-
-
-
-
-
+  <% end %>
+</div>
+</div>

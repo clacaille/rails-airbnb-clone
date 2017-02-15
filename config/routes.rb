@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   get "camp/:id", to: "pages#camp", as: :my_camp
   get "my_camps", to: "pages#my_camps", as: :my_camps
+  put "camp/:id", to: "pages#confirm_booking"
+  get "filter", to: "pages#filter", as: :camps_filter
 end
