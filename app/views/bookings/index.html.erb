@@ -4,7 +4,7 @@
 <% @bookings.each do |booking| %>
 
 <div class="card-booking">
-<%= link_to camp_bookings_path(booking) do %>
+<%= link_to booking_path(booking) do %>
 
 
     <div class="card-title"><%= booking.camp.title %></div>
