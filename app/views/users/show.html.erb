@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="banner-user">
     <h1>My Profile</h1>
     <%= cl_image_tag @user.photo, class: "avatar-account pic-account" %>
@@ -10,6 +11,39 @@
       <h2> <%= link_to 'Modifier mon profil', edit_user_path(@user)%></h2>
     </div>
   </div>
+
+  <div class="tabs" id="tabs">
+    <a class="tab active" data-target="#my-bookings">
+      <h3>My Bookings</h3>
+      <p><%= @user.bookings.count %></p>
+    </a>
+    <a class="tab" data-target="#my-camps">
+      <h3>My Camps</h3>
+      <p><%= @user.camps.count %></p>
+    </a>
+    <a class="tab" data-target="#my-reviews">
+      <h3>My Reviews</h3>
+      <p>0</p>
+    </a>
+  </div>
+
+  <div class="container">
+      <div class="tab-content" id="my-bookings">
+        <%= render 'bookings/index' %>
+      </div>
+      <div class="tab-content hidden" id="my-camps">
+        <%= render 'pages/my_camps' %>
+      </div>
+      <div class="tab-content hidden" id="my-reviews">
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+
 </div>
-
-

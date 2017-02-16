@@ -2,6 +2,7 @@ class Camp < ApplicationRecord
   # associations
   belongs_to :user
   has_many :bookings
+  has_many :reviews
   # validations
   validates :title, presence: true
   validates :description, presence: true
