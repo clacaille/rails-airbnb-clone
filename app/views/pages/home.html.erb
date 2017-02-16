@@ -10,12 +10,12 @@
   </div><!-- /search -->
   <div class="map"><!-- /map -->
     <%= image_tag "map.png" %>
-    <%= link_to "America", root_path, class: "map-button", id: "america" %>
-    <%= link_to "America-latina", root_path, class: "map-button", id: "america-latina"%>
-    <%= link_to "Europe", root_path, class: "map-button", id: "europe"%>
-    <%= link_to "Australia", root_path, class: "map-button", id: "australia"%>
-    <%= link_to "Asia", root_path, class: "map-button", id: "asia"%>
-    <%= link_to "Africa", root_path, class: "map-button", id: "africa"%>
+    <%= link_to "North-America", camps_filter_path(search: "north-america", radius_km: "2500"), class: "map-button", id: "north-america" %>
+    <%= link_to "South-America", camps_filter_path(search: "south-america", radius_km: "2500"), class: "map-button", id: "south-america"%>
+    <%= link_to "Europe", camps_filter_path(search: "europe", radius_km: "1800"), class: "map-button", id: "europe"%>
+    <%= link_to "Australia", camps_filter_path(search: "australia", radius_km: "1600"), class: "map-button", id: "australia"%>
+    <%= link_to "Asia", camps_filter_path(search: "southeast-asia", radius_km: "2000"), class: "map-button", id: "asia"%>
+    <%= link_to "Africa", camps_filter_path(search: "africa", radius_km: "3500"), class: "map-button", id: "africa"%>
   </div><!-- /map -->
 </div>
 </div>
