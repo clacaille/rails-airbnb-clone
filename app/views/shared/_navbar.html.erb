@@ -17,7 +17,6 @@
         <div class="dropdown">
           <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
             <%= link_to image_tag(avatar_url, class: "avatar"), user_path(current_user)%>
-
               <%= link_to destroy_user_session_path, method: :delete do %>
            <%= t(".sign_out", default: "Log out") %>
               <% end %>
