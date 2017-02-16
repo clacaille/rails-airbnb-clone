@@ -7,6 +7,7 @@ class User < ApplicationRecord
   #associations
   has_many :camps, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :reviews
   #validations
 
   mount_uploader :photo, PhotoUploader
