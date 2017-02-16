@@ -36,7 +36,7 @@
       </div>
       <div class="tab-content hidden" id="my-reviews">
 
-      <% @user.reviews.each do |review| %>
+      <%= @user.reviews.each do |review| %>
           <h4> <%= review.title %></h4>
           <p> <%= review.description %></p>
           <p><%= review.rating %></p>
