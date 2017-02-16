@@ -22,14 +22,14 @@ class PagesController < ApplicationController
   end
 
   def filter
-    radius = 100
-    radius = params[:radius_km] unless params[:radius_km].blank?
+
+    radius = !params[:radius_km].blank? ? params[:radius_km] : 2000
     result = Geocoder.search(params[:search]).first
     case result.data["types"].first
-    when "country"
+    when "country" != 'Australia'
       @camps = Camp.near(params[:search], 500)
     when "continent"
-      @camps = Camp.near(params[:search], params[:radius_km])
+      @camps = Camp.near(params[:search], radius)
     when "locality"
       @camps = Camp.near(params[:search], 20)
     else

@@ -1,7 +1,10 @@
 <div class="container">
 
   <div class="banner-user">
-    <%= cl_image_tag @user.photo, class: "avatar-account pic-account" %>
+    <h1>My Profile</h1>
+    <% photo = @user.photo || @user.facebook_picture_url %>
+    <%= cl_image_tag photo, class: "avatar-account pic-account" %>
+
     <div class="user-infos">
       <h1> <%= @user.first_name %> <%= @user.last_name %> </h1>
     </div>
