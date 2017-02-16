@@ -41,7 +41,7 @@
             <%= f.input :start_date, as: :string, input_html: { class: "datepicker" }, placeholder: 'Pick a starting date' %>
             <%= f.input :end_date, as: :string, input_html: { class: "datepicker" }, placeholder: 'Pick an ending date' %>
             <%=f.input :surfers, collection: 1..12, selected: 1, label: "For how many surfers?" %>
-            <%= f.submit "Book now" , class: "btn btn-primary" %>
+            <%= f.submit "Book now" , class: "btn btn-primary"%>
             <% end %>
           </div>
           <div class="modal-footer">

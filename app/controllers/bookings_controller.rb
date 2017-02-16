@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.camp = @camp
     @booking.user = current_user
     if @booking.save
-        redirect_to bookings_path
+        redirect_to camp_path(@camp)
       else
         render 'camps/show'
     end
