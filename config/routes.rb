@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [ :show, :edit, :update ]
   resources :camps do
     resources :bookings, only: [:new, :create]
+    resources :reviews, only: [:new, :create,]
   end
   resources :bookings, only: [:index, :destroy, :show, :edit, :update]
 
