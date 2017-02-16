@@ -24,50 +24,45 @@
 
 .banner-user {
   position: relative;
-  color: white;
-  height: 250px;
-  background-color: #6EB6FF;
-  border-radius: 4px;
+  height: 120px;
   padding-left: 10px;
   padding-right: 10px;
   // box-shadow: 3px 9px 22px -8px #000000;
 }
+.profil-edit{
+  position: relative;
 
-.profil-edit {
+}
+
+.profil-edit i {
   position: absolute;
-  bottom: 1px;
-  right: 10px;
+  color: #7098DA;
+  font-size: 23px;
+  transition: background 0.5s ease;
+  top: 55px;
+  right: 480px;
+}
+
+.profil-edit i:hover {
+ color: #6638F0;
 }
 
 .user-infos {
   position: absolute;
-  top: 90px;
-  left: 200px;
+  top: 25px;
+  left: 120px;
 }
 
 
 .banner-user h1 {
-  color: white;
+  color: #4AF2A1;
 }
 
 .banner-user h3 {
   color: white;
 }
 
-.profil-edit a {
-  color: white;
-  font-size: 23px;
-  font-weight: lighter;
-  transition: background 0.5s ease;
-}
 
-.profil-edit a:hover {
- color: #E6FCFF;
-}
-
-.banner-user h1 {
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-}
 
 .banner-detail {
   position: relative;
