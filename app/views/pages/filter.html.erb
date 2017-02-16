@@ -1,11 +1,17 @@
 <div class="camp-list-padded">
 <div class="container">
-<h1>Your Search</h1>
-
+<div class="search-list">
+ <div class="sw">
+    <form>
+      <input type="search" class="search-detail" placeholder="Search..." />
+      <button class="go"><span class="entypo-search"></span></button>
+      <a href="#" class="logo" title="GMRUI"></a>
+    </form>
+  </div>
+</div>
 
   <div class="row">
           <!--  Camp card - 1/2 -->
-
           <div class="col-md-6 camp-column ">
               <% @camps.each do |camp| %>
               <%= link_to camp_path(camp) do %>
@@ -17,7 +23,6 @@
               <% end %>
             <% end %>
           </div>
-
          <!--  map - 1/2 -->
         <div class="col-md-6 map-column" >
           <!-- map GA-->
