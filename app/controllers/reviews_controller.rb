@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 before_action :set_camp, only: [:index, :new]
-before_action :set_user, only: [:edit, :update, :destroy]
+before_action :set_review, only: [ :edit, :update ]
+
 
   def index
     @reviews = @camp.reviews
@@ -28,15 +29,16 @@ before_action :set_user, only: [:edit, :update, :destroy]
   def update
     @review.update(review_params)
     if @review.save
-      redirect_to reviews_path
+      redirect_to user_path(@review.user)
     else
       render :edit
     end
   end
 
   def destroy
+    @review = Review.find(params[:id])
     @review.destroy
-    redirect_to reviews_path
+    redirect_to :back
   end
 
 
@@ -54,5 +56,8 @@ before_action :set_user, only: [:edit, :update, :destroy]
     @user = User.find(params[:id])
   end
 
+  def set_review
+     @review = Review.find(params[:id])
+  end
 
 end
