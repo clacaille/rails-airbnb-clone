@@ -68,36 +68,25 @@
   <div class="row">
     <div class="col-md-12">
       <h3>Reviews:</h3>
+      <% @camp.reviews.each do |review| %>
       <div class="review">
         <div class='avatar-review'>
+        <%= image_tag(review.user.photo, class: "avatar-review") %>
         </div>
         <div class='review-body'>
-          <h3>Génial</h3>
-          <p>Moment incroyable avec toute la team de staff, j'ai adorée vraiment</p>
+          <h3><%= review.title %></h3>
+          <p><%= review.description %></p>
         </div>
         <ul class="list-inline product-controls hidden-sm hidden-xs">
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
+          <% review.rating.times do %>
+              <i class="fa fa-star" style="color: #ffb400"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+             <i class="fa fa-star" style="color: gray"></i>
+            <% end %>
         </ul>
       </div>
-       <div class="review">
-        <div class='avatar-review'>
-        </div>
-        <div class='review-body'>
-          <h3>Génial</h3>
-          <p>Moment incroyable avec toute la team de staff, j'ai adorée vraiment</p>
-        </div>
-        <ul class="list-inline product-controls hidden-sm hidden-xs">
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-          <li><i class="fa fa-star"></i></li>
-        </ul>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
