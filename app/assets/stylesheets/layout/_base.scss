@@ -66,7 +66,7 @@ color: #4D5052;
     background-color: #F78AE0;
     padding: 4px;
     border-radius: 4px;
-    width: auto;
+    display:inline;
     text-align: center;
     margin: 15px 0;
 }
@@ -94,6 +94,30 @@ color: #4D5052;
 .form-look h2{
   margin: 25px 0;
   color: #4AF2A1;
+}
+
+
+.sign-form-look{
+  background-color: #F5F8FA;
+  border-radius:4px;
+  margin : 20px 0;
+  padding: 10px;
+  display: inline;
+}
+
+.form-look{
+    float: none;
+    margin: 0 auto;
+    background-color: #F0F0F1;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 30px;
+
+}
+
+.form-look h2{
+  margin: 20px 0;
+  color: #6EB6FF;
 }
 
 
