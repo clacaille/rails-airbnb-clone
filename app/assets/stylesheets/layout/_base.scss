@@ -54,33 +54,46 @@ text-decoration: none;
   margin : 15px 0;
 }
 
-
+// --- camp single view elements ---
 .description-look{
 font-size: 20px;
 font-weight: lighter;
 margin: 20px 0;
 color: #4D5052;
 
-
 }
-
 .price-look{
     background-color: #F78AE0;
     padding: 4px;
     border-radius: 4px;
-    width: 70px;
+    width: auto;
     text-align: center;
     margin: 15px 0;
 }
 
-.camp-summary{
-}
 
 .book-form, .book-recap{
-  background-color: #F0F0F1;
+  background-color: #F5F8FA;
   border-radius:4px;
   margin : 20px 0;
   padding: 10px;
+}
+
+.form-look{
+    text-align:center;
+    float: none;
+    margin: 0 auto;
+    background-color: #F5F8FA;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 50px;
+    box-shadow: 2px 2px 2px #F1F1F1;
+
+}
+
+.form-look h2{
+  margin: 25px 0;
+  color: #4AF2A1;
 }
 
 
