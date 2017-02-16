@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [ :show, :edit, :update ]
-
+  layout "account_layout"
   def show
     @camps = @user.camps
     @bookings = @user.bookings
