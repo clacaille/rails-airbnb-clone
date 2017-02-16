@@ -22,7 +22,10 @@ class PagesController < ApplicationController
   end
 
   def filter
-    @camps = Camp.near(params[:search], 1000)
+    radius = 1000
+    radius = params[:radius_km] unless params[:radius_km].blank?
+    @camps = Camp.near(params[:search], radius)
+    #binding.pry
     @hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
       marker.lat camp.latitude
       marker.lng camp.longitude
@@ -34,4 +37,7 @@ class PagesController < ApplicationController
   def set_camp
     @camp = Camp.find(params[:id])
   end
+
+
+
 end
