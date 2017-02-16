@@ -73,6 +73,7 @@
 .explication {
   padding-bottom: 50px;
   padding-top: 50px;
+  color: #4D5052;
 }
 
 .best-camps {
@@ -80,4 +81,15 @@
   padding-top: 50px;
   background-color: #E0FCFF;
   background-size: cover !important;
+  color: #4D5052;
+}
+
+.home-h2-text a{
+  font-family : "Fredoka One", "Helvetica", "sans-serif";
+  font-size: 41px;
+  color: white;
+}
+
+.home-h2-text a:hover{
+  color:#F55BF5;
 }
