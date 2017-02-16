@@ -23,7 +23,7 @@ class PagesController < ApplicationController
 
   def filter
 
-    radius = !params[:radius_km].blank? ? params[:radius_km] : 1000
+    radius = !params[:radius_km].blank? ? params[:radius_km] : 2000
     result = Geocoder.search(params[:search]).first
     case result.data["types"].first
     when "country" != 'Australia'
