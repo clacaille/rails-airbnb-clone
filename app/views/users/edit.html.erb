@@ -1,11 +1,17 @@
 <div class="container">
-    <%= simple_form_for(@user) do |f| %>
+  <div class="row">
+    <div class="col-sm-4 form-look">
 
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
+      <%= simple_form_for(@user) do |f| %>
 
-      <%= f.submit "Edit your profile", class: "btn btn-success text-center" %>
-    <% end %>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+
+        <%= f.submit "Edit your profile", class: "btn btn-success text-center" %>
+      <% end %>
+
+    </div>
+  </div>
 </div>

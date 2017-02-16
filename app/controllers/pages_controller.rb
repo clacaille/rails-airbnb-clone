@@ -22,17 +22,27 @@ class PagesController < ApplicationController
   end
 
   def filter
-    radius = 1000
+    radius = 100
     radius = params[:radius_km] unless params[:radius_km].blank?
-    @camps = Camp.near(params[:search], radius)
-    #binding.pry
+    result = Geocoder.search(params[:search]).first
+    case result.data["types"].first
+    when "country"
+      @camps = Camp.near(params[:search], 500)
+    when "continent"
+      @camps = Camp.near(params[:search], params[:radius_km])
+    when "locality"
+      @camps = Camp.near(params[:search], 20)
+    else
+      @camps = Camp.near(params[:search], radius)
+    end
     @hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
       marker.lat camp.latitude
       marker.lng camp.longitude
     end
   end
 
-  private
+
+ private
 
   def set_camp
     @camp = Camp.find(params[:id])
