@@ -57,9 +57,20 @@
 <!-- Description -->
 <div class="container description-camp">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-sm-9 col-xs-12">
       <h3>Description:</h3>
       <p><%= @camp.description %></p>
+    </div>
+    <div class= "col-sm-3 col-xs-12 price-box-container">
+      <div class="text-center profil-show">
+        <%= image_tag(@camp.user.photo, class: "avatar-show") %>
+      </div>
+    <!-- Button trigger modal -->
+       <div class="text-center">
+        <%= @camp.user.first_name %>
+        <br>
+        <%= @camp.user.last_name %>
+    </div>
     </div>
   </div>
 </div>
