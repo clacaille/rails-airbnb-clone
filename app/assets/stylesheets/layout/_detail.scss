@@ -59,3 +59,48 @@ color: #4D5052;
     font-size: 40px;
     color: white;
 }
+
+
+/*REVIEWS*/
+.reviews-camp {
+  padding-bottom: 30px;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+/* Body design */
+.review-body {
+  flex: 1 1 auto;
+}
+.review-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.review-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+
+/* Avatar design */
+.avatar-review {
+  width: 30px;
+  border-radius: 50%;
+}
+
+
+/* Hover effects */
+.review:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+
+
