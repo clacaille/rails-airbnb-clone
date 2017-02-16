@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   resources :users, only: [ :show, :edit, :update ]
   resources :camps do
     resources :bookings, only: [:new, :create]
-    resources :reviews, only: [:new, :create,]
+    resources :reviews, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :destroy, :show, :edit, :update]
+  resources :bookings, only: [:index, :destroy, :show, :edit, :update] do
+
+  end
+  resources :reviews, only: [:edit, :update, :destroy]
 
   get "camp/:id", to: "pages#camp", as: :my_camp
   get "my_camps", to: "pages#my_camps", as: :my_camps
