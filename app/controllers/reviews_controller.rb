@@ -21,6 +21,9 @@ before_action :set_user, only: [:edit, :update, :destroy]
     end
   end
 
+  def edit
+  end
+
   def update
     @review.update(review_params)
     if @review.save
