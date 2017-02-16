@@ -9,3 +9,16 @@
 }
 
 
+.background-for-home {
+  height: 30vh;
+  background: url('background.png') no-repeat 1% 25% ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
