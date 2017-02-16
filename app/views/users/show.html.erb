@@ -1,17 +1,22 @@
 <div class="container">
 
   <div class="banner-user">
-    <h1>My Profile</h1>
     <%= cl_image_tag @user.photo, class: "avatar-account pic-account" %>
     <div class="user-infos">
-      <h3> <%= @user.first_name %> </h3>
-      <h3> <%= @user.last_name %> </h3>
+      <h1> <%= @user.first_name %> <%= @user.last_name %> </h1>
     </div>
     <div class="profil-edit">
-      <h2> <%= link_to 'Modifier mon profil', edit_user_path(@user)%></h2>
+     <%= link_to edit_user_path(@user) do%>
+       <i class="fa fa-pencil" aria-hidden="true"></i>
+      <% end %>
     </div>
   </div>
+</div>
 
+
+
+<div class="container">
+<div class="tabs-back">
   <div class="tabs" id="tabs">
     <a class="tab active" data-target="#my-bookings">
       <h3>My Bookings</h3>
@@ -27,7 +32,8 @@
     </a>
   </div>
 
-  <div class="container">
+
+
       <div class="tab-content" id="my-bookings">
         <%= render 'bookings/index' %>
       </div>
@@ -43,7 +49,10 @@
           <div class="btn btn-primary"><%= link_to ' Edit review', edit_review_path %></div>
       <%end %>
 
-      </div>
     </div>
-
+  </div>
 </div>
+
+
+
+

@@ -8,13 +8,14 @@
 .tabs a:hover {
   cursor: pointer;
   text-decoration: none;
-  opacity: 0.8;
 }
+
 .tabs h3 {
   font-size: 17px;
   font-weight: bold;
   margin-top: 0;
 }
+
 .tabs p {
   opacity: 0.5;
   margin-bottom: 0;
@@ -24,7 +25,14 @@
   flex: 1 0 100px;
   text-align: center;
   padding: 20px 0;
+  color: #4D5052;
+  background-color: #F9FAFC;
 }
+
+.tab h3{
+  color: #6EB6FF
+}
+
 .tab:first-child {
   border-radius: 10px 0 0 0;
 }
@@ -32,10 +40,17 @@
   border-radius: 0 10px 0 0;
 }
 .tab.active {
-  background: #E8FCFF;
-  color: black;
+  background:white;
+  box-shadow: -2px -2px 2px #E6E6E6;
 }
 
-.tabs-content {
-  margin-left: -10px;
+.tab.active h3{
+  color: #6EB6FF;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.tabs-back{
+  background-color: #E0FCFF;
+  border-radius: 10px;
 }
