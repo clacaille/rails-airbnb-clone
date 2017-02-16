@@ -1,0 +1,107 @@
+.book-form, .book-recap{
+  background-color: #F5F8FA;
+  border-radius:4px;
+  margin : 20px 0;
+  padding: 10px;
+}
+
+.form-look{
+    text-align:center;
+    float: none;
+    margin: 0 auto;
+    background-color: #F5F8FA;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 50px;
+    box-shadow: 2px 2px 2px #F1F1F1;
+
+}
+
+.price-box-container{
+  border-left: 1px solid hsla(60,1%,75%,.3);
+}
+
+.form-look h2{
+  margin: 25px 0;
+  color: #4AF2A1;
+}
+
+.detail-intro {
+  border-bottom: 1px solid hsla(60,1%,75%,.3);
+  padding-top: 26px;
+padding-bottom: 26px;
+}
+
+.reviews-camp {
+  border-bottom: 1px solid hsla(60,1%,75%,.3);
+}
+
+.dispo-camp {
+  border-bottom: 1px solid hsla(60,1%,75%,.3);
+}
+
+.description-camp{
+  border-bottom: 1px solid hsla(60,1%,75%,.3);
+  padding-bottom: 10px;
+}
+
+.description-look{
+font-size: 20px;
+font-weight: lighter;
+margin: 20px 0;
+color: #4D5052;
+
+}
+.price-look{
+    background-color: #F78AE0;
+    padding: 4px;
+    border-radius: 4px;
+    margin: 25px;
+    font-size: 40px;
+    color: white;
+}
+
+
+/*REVIEWS*/
+.reviews-camp {
+  padding-bottom: 30px;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+/* Body design */
+.review-body {
+  flex: 1 1 auto;
+}
+.review-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.review-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+
+/* Avatar design */
+.avatar-review {
+  width: 30px;
+  border-radius: 50%;
+}
+
+
+/* Hover effects */
+.review:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+
+

@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-before_action :set_camp, only: [:index, :new, :create]
+before_action :set_camp, only: [:index, :new]
 before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
@@ -12,8 +12,9 @@ before_action :set_user, only: [:edit, :update, :destroy]
 
   def create
     @review = Review.new(review_params)
-    @review.camp = @camp
     @review.user = current_user
+    @review.camp = Camp.find(params[:camp_id])
+    @camp = @review.camp
     if @review.save
         redirect_to camp_path(@camp)
       else
@@ -42,7 +43,7 @@ before_action :set_user, only: [:edit, :update, :destroy]
   private
 
   def review_params
-    params.require(:review).permit(:title, :description, :rating, :camp_id)
+    params.require(:review).permit(:title, :description, :rating)
   end
 
   def set_camp

@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @camps = @user.camps
     @bookings = @user.bookings
+    @reviews = @user.reviews
   end
 
   def edit
