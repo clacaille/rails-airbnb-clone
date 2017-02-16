@@ -10,5 +10,6 @@
       <div class="card-accepted"><%= elper(booking) %></div>
       <div class="card-price"><%= booking.camp.price %>$</div>
       </div>
+       <div class="btn btn-primary"><%= link_to 'Add a review', new_camp_review_path(booking.camp) %></div>
     <% end %>
 <% end %>
