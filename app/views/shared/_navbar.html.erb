@@ -18,7 +18,7 @@
           <%= link_to destroy_user_session_path, method: :delete, class: "navbar-wagon-item navbar-wagon-link" do %>
             <%= t(".sign_out", default: "Log out") %>
           <% end %>
-          <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+          <% avatar_url = current_user.photo || current_user.facebook_picture_url %>
             <%= link_to image_tag(avatar_url, class: "avatar"), user_path(current_user)%>
         </div>
       </div>

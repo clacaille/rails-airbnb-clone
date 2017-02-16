@@ -28,6 +28,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def create
     @camp = Camp.new(camp_params)
+    @camp.price = params[:camp][:price].match(/\d+/)
     @camp.user = current_user
     if @camp.save
       redirect_to my_camp_path(@camp)
@@ -41,6 +42,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 
   def update
     @camp.update(camp_params)
+    @camp.price = params[:camp][:price].match(/\d+/)
     if @camp.save
       redirect_to camp_path(@camp)
     else
@@ -56,7 +58,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   private
   # Never trust parameters from the scary internet, only allow the white list through.
   def camp_params
-    params.require(:camp).permit(:title, :description, :address, :price, :photo, :photo_cache)
+    params.require(:camp).permit(:title, :description, :address, :photo, :photo_cache)
   end
 
   def set_camp
