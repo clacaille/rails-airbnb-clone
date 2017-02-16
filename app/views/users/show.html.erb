@@ -2,7 +2,8 @@
 
   <div class="banner-user">
     <h1>My Profile</h1>
-    <%= cl_image_tag @user.photo, class: "avatar-account pic-account" %>
+    <% photo = @user.photo || @user.facebook_picture_url %>
+    <%= cl_image_tag photo, class: "avatar-account pic-account" %>
     <div class="user-infos">
       <h3> <%= @user.first_name %> </h3>
       <h3> <%= @user.last_name %> </h3>
