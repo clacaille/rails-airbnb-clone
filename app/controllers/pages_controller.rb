@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   before_action :set_camp, only: [ :camp, :confirm_booking ]
   layout "home_layout"
   def home
-    @camps = Camp.all
+    @camps = Camp.last(6)
   end
 
   def camp
