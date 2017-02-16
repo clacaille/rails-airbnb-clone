@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [ :show, :edit, :update ]
 
   def show
+    @camps = @user.camps
+    @bookings = @user.bookings
   end
 
   def edit
@@ -21,4 +23,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :photo)
   end
+
 end
