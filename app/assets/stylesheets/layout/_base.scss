@@ -71,12 +71,29 @@ color: #4D5052;
     margin: 15px 0;
 }
 
-// --- forms and recap grey boxes---
+
 .book-form, .book-recap{
   background-color: #F5F8FA;
   border-radius:4px;
   margin : 20px 0;
   padding: 10px;
+}
+
+.form-look{
+    text-align:center;
+    float: none;
+    margin: 0 auto;
+    background-color: #F5F8FA;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 50px;
+    box-shadow: 2px 2px 2px #F1F1F1;
+
+}
+
+.form-look h2{
+  margin: 25px 0;
+  color: #4AF2A1;
 }
 
 
