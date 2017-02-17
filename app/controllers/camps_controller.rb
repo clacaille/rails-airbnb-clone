@@ -8,6 +8,11 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     @hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
       marker.lat camp.latitude
       marker.lng camp.longitude
+       marker.picture({
+        :url => ActionController::Base.helpers.asset_path('marker.png'),
+        :width   => 18.42,
+        :height  => 70,
+       })
       # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
     end
   end
@@ -18,6 +23,11 @@ skip_before_action :authenticate_user!, only: [:index, :show]
     @hash = Gmaps4rails.build_markers(@camp) do |camp, marker|
       marker.lat camp.latitude
       marker.lng camp.longitude
+       marker.picture({
+        :url => ActionController::Base.helpers.asset_path('marker.png'),
+        :width   => 18.42,
+        :height  => 70,
+       })
     end
   end
 

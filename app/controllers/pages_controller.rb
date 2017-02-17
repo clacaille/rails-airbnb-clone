@@ -38,9 +38,9 @@ class PagesController < ApplicationController
       marker.lat camp.latitude
       marker.lng camp.longitude
       marker.picture({
-        :url => ActionController::Base.helpers.asset_path("marker.png"),
-        :width   => 20,
-        :height  => 78.75,
+        :url => ActionController::Base.helpers.asset_path('marker.png'),
+        :width   => 18.42,
+        :height  => 70,
        })
     end
   end
