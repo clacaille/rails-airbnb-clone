@@ -37,8 +37,21 @@ class PagesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
       marker.lat camp.latitude
       marker.lng camp.longitude
+      marker.picture({
+        :url => ActionController::Base.helpers.asset_path("marker.png"),
+        :width   => 20,
+        :height  => 78.75,
+       })
     end
   end
+
+  # def gmaps4rails_marker_picture
+  #   {
+  #   "picture" => '/asset/marker.png',          # string,  mandatory
+  #    "width" =>  50,          # integer, mandatory
+  #    "height" => 100,          # integer, mandatory
+  #  }
+  # end
 
 
  private

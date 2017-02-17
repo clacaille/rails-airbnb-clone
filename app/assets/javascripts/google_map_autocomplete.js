@@ -58,4 +58,5 @@ function getAddressComponents(place) {
     city: city,
     country_code: country_code
   };
+
 }
