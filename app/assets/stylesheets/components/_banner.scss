@@ -44,10 +44,10 @@
 }
 
 .edit-pencil-profile i {
-
   color: #7098DA;
   font-size: 20px;
   transition: background 0.5s ease;
+  padding : 15px;
 
 }
 
@@ -67,3 +67,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.block {
+  display: inline-block;
+ }
+
+ .h1 {
+  color: #4AF2A1;
+ }

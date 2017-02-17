@@ -4,18 +4,18 @@
     <%= cl_image_tag photo, class: "avatar-account pic-account" %>
 
     <div class="user-infos">
-      <h1> <%= @user.first_name %> <%= @user.last_name %> </h1>
-      <div class="edit-pencil-profile">
+      <div class="h1 block"> <%= @user.first_name %> <%= @user.last_name %>   </div>
+      <div class="edit-pencil-profile block">
      <%= link_to edit_user_path(@user) do%>
        <i class="fa fa-pencil" aria-hidden="true"></i>
       <% end %>
     </div>
+    </h1>
     </div>
 
 
   </div>
 </div>
-
 
 
 <div class="container">
