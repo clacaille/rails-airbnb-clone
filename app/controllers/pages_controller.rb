@@ -24,25 +24,28 @@ class PagesController < ApplicationController
   def filter
     radius = !params[:radius_km].blank? ? params[:radius_km] : 2000
     result = Geocoder.search(params[:search]).first
-    case result.data["types"].first
-    when "country" !="australia"
-      @camps = Camp.near(params[:search], 500)
-    when "continent"
-      @camps = Camp.near(params[:search], radius)
-    when "locality"
-      @camps = Camp.near(params[:search], 20)
-    else
-      @camps = Camp.near(params[:search], 1600)
+    if result
+      case result.data["types"].first
+      when "country" !="australia"
+        @camps = Camp.near(params[:search], 500)
+      when "continent"
+        @camps = Camp.near(params[:search], radius)
+      when "locality"
+        @camps = Camp.near(params[:search], 20)
+      else
+        @camps = Camp.near(params[:search], 1600)
+      end
+      @hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
+        marker.lat camp.latitude
+        marker.lng camp.longitude
+        marker.picture({
+          :url => ActionController::Base.helpers.asset_path('marker.png'),
+          :width   => 18.42,
+          :height  => 70,
+        })
+      end
     end
-    @hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
-      marker.lat camp.latitude
-      marker.lng camp.longitude
-      marker.picture({
-        :url => ActionController::Base.helpers.asset_path('marker.png'),
-        :width   => 18.42,
-        :height  => 70,
-       })
-    end
+
   end
 
   # def gmaps4rails_marker_picture
