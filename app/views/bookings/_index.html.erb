@@ -3,9 +3,10 @@
  <%= link_to booking_path(booking) do %>
 
      <% if booking.camp.photo? %>
-      <div class="card-prof" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path camp.photo %>');">
+      <div class="card-prof" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path booking.camp.photo %>');">
     <% else %>
       <div class="card-prof" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'background.png' %>'); background-position: 1% 25%;">
+
     <% end %>
          <div class="card-title"><%= booking.camp.title %></div>
          <div class="card-date">
