@@ -1,5 +1,4 @@
 
-
   <% @camps.each do |camp| %>
   <%= link_to my_camp_path(camp) do %>
     <% if camp.photo? %>
@@ -7,10 +6,10 @@
     <% else %>
       <div class="card-prof" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'background.png' %>'); background-position: 1% 25%;">
     <% end %>
-       <div class ="card-title"><%= camp.title %></div>
-       <div class= "card-description"> <%= camp.description %></div>
-       <div class="card-price"><%= camp.price %>$</div>
-    </div>
+         <div class ="card-title"><%= camp.title %></div>
+         <div class= "card-description"> <%= camp.description %></div>
+         <div class="card-price"><%= camp.price %>$</div>
+      </div>
   <% end %>
 <% end %>
 
