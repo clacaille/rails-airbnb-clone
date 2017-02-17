@@ -13,8 +13,11 @@
   <div class="col-md-5 camp-column">
     <% @camps.each do |camp| %>
     <%= link_to camp_path(camp) do %>
-      <% photo = camp.photo %>
-      <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= photo %>');">
+      <% if camp.photo? %>
+      <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path camp.photo %>');">
+    <% else %>
+      <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'background.png' %>'); background-position: 1% 25%;">
+    <% end %>
         <div class ="card-title"><%= camp.title %></div>
         <div class="card-price"><%= camp.price %>$</div>
       </div>
