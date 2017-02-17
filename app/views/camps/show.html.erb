@@ -81,10 +81,10 @@
       <% @camp.reviews.each do |review| %>
       <div class="review">
         <div class='avatar-review'>
-        <% if !current_user.facebook_picture_url.nil? %>
-            <% photo = current_user.facebook_picture_url %>
-          <%elsif !current_user.photo.nil? %>
-              <% photo = current_user.photo %>
+        <% if !review.user.facebook_picture_url.nil? %>
+            <% photo = review.user.facebook_picture_url %>
+          <%elsif !review.user.photo.nil? %>
+              <% photo = review.user.photo %>
           <% else %>
             <% photo = "http://placehold.it/30x30" %>
           <% end %>
