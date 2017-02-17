@@ -25,34 +25,9 @@
 .banner-user {
   position: relative;
   height: 120px;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-bottom: 20px;
   // box-shadow: 3px 9px 22px -8px #000000;
 }
-.profil-edit{
-  position: relative;
-
-}
-
-.profil-edit i {
-  position: absolute;
-  color: #7098DA;
-  font-size: 23px;
-  transition: background 0.5s ease;
-  top: 55px;
-  right: 480px;
-}
-
-.profil-edit i:hover {
- color: #6638F0;
-}
-
-.user-infos {
-  position: absolute;
-  top: 25px;
-  left: 120px;
-}
-
 
 .banner-user h1 {
   color: #4AF2A1;
@@ -62,7 +37,24 @@
   color: white;
 }
 
+.user-infos {
+  position: absolute;
+  top: 25px;
+  left: 90px;
+}
 
+.edit-pencil-profile i {
+  position: absolute;
+  color: #7098DA;
+  font-size: 20px;
+  transition: background 0.5s ease;
+  top: 60px;
+  left: 410px;
+}
+
+.edit-pencil-profile i:hover {
+ color: #6638F0;
+}
 
 .banner-detail {
   position: relative;
