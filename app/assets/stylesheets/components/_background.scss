@@ -1,7 +1,7 @@
 
 .background {
   height: 125vh;
-  background: url('background.png') no-repeat center;
+  background: image-url('background.png') no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -11,7 +11,7 @@
 
 .background-for-home {
   height: 30vh;
-  background: url('background.png') no-repeat 1% 25% ;
+  background: image-url('background.png') no-repeat 1% 25% ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -24,7 +24,7 @@
 
 .background-create {
   height: 125vh;
-  background: url('background2.png') no-repeat center;
+  background: image-url('background2.png') no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -35,7 +35,7 @@
 
 .background-profil {
   height: 125vh;
-  background: url('background3.png') no-repeat center;
+  background: image-url('background3.png') no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
