@@ -81,7 +81,14 @@
       <% @camp.reviews.each do |review| %>
       <div class="review">
         <div class='avatar-review'>
-        <%= image_tag(review.user.photo, class: "avatar-review") %>
+        <% if !review.user.facebook_picture_url.nil? %>
+            <% photo = review.user.facebook_picture_url %>
+          <%elsif !review.user.photo.nil? %>
+              <% photo = review.user.photo %>
+          <% else %>
+            <% photo = "http://placehold.it/30x30" %>
+          <% end %>
+        <%= image_tag photo, class: "avatar-review" %>
         </div>
         <div class='review-body'>
           <h3><%= review.title %></h3>
