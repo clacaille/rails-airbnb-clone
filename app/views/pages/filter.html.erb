@@ -11,16 +11,17 @@
 <div class="row">
   <!--  Camp card - 1/2 -->
   <div class="col-md-5 camp-column">
-    <% if @camps %>
-      <% @camps.each do |camp| %>
-      <%= link_to camp_path(camp) do %>
-        <% photo = camp.photo %>
-        <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= photo %>');">
-          <div class ="card-title"><%= camp.title %></div>
-          <div class= "card-description"> <%= camp.description %></div>
-          <div class="card-price"><%= camp.price %>$</div>
-        </div>
-      <% end %>
+
+    <% @camps.each do |camp| %>
+    <%= link_to camp_path(camp) do %>
+      <% if camp.photo? %>
+      <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path camp.photo %>');">
+    <% else %>
+      <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'background.png' %>'); background-position: 1% 25%;">
+    <% end %>
+        <div class ="card-title"><%= camp.title %></div>
+        <div class="card-price"><%= camp.price %>$</div>
+      </div>
     <% end %>
     <% else %>
       <p>Aucun résultat pour "<%= params[:search] %>"</p>
