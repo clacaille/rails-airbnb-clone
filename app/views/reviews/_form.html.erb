@@ -1,5 +1,5 @@
 <%= simple_form_for [camp, Review.new] do |f| %>
-    <%= f.input :title, placeholder: "Summurize your experience in a short title", label: false, :class => "form-field", required: true %>
+    <%= f.input :title, placeholder: "Summarize your experience in a short title", label: false, :class => "form-field", required: true %>
     <%= f.input :description, placeholder: "Tell us why your experience was great (e.i. : John was a great teacher, I can't wait to come back with my whole family next year)", label: false, :class => "form-field" %>
     <%= f.input :rating, placeholder: "Give a rating between 1(min) and 5(max) to your experience", label:false, :class => "form-field", required: true %>
     <%= f.submit class: "btn btn-primary" %>
