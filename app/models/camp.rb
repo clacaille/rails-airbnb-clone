@@ -1,7 +1,7 @@
 class Camp < ApplicationRecord
   # associations
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   has_many :reviews
   # validations
   validates :title, presence: true
