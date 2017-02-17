@@ -5,13 +5,14 @@
 
     <div class="user-infos">
       <h1> <%= @user.first_name %> <%= @user.last_name %> </h1>
-    </div>
-
-    <div class="edit-pencil-profile">
+      <div class="edit-pencil-profile">
      <%= link_to edit_user_path(@user) do%>
        <i class="fa fa-pencil" aria-hidden="true"></i>
       <% end %>
     </div>
+    </div>
+
+
   </div>
 </div>
 

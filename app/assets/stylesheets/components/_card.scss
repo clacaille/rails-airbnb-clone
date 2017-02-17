@@ -91,6 +91,16 @@
   position:absolute;
   bottom:5px;
   right:15px;
+  z-index: 100;
+}
+
+.link-card-prof{
+  position : absolute;
+  width:100%;
+  height: 100%;
+  z-index: 50;
+  top:0;
+  left:0;
 }
 
 .card-prof-btn a{
@@ -179,4 +189,5 @@
 .delete-reviews-pencil i:hover{
   color: #6638F0;
 }
+
 
