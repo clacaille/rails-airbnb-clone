@@ -135,17 +135,31 @@
 }
 
 .review-title{
+  font-size: 30px;
+  color : #4AF2A1;
+  position: absolute;
+  top: 10px;
+  left : 15px;
+}
 
+.review-dashboard-rating{
+  position: absolute;
+  top: 50px;
+  left : 20px;
 }
 
 .review-description{
-
+  font-size: 15px;
+  color: #4D5052;
+  position: absolute;
+  top: 80px;
+  left : 15px;
 }
 
 .edit-reviews-pencil i{
   position: absolute;
   top: 15px;
-  right: 40px;
+  right: 50px;
   color: #7098DA;
   font-size: 20px;
 }
@@ -157,7 +171,7 @@
 .delete-reviews-pencil i{
   position: absolute;
   top: 15px;
-  right: 15px;
+  right: 20px;
   color: #7098DA;
   font-size: 20px;
 }

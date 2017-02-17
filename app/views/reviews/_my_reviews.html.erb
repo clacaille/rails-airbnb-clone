@@ -1,8 +1,16 @@
 <% @user.reviews.each do |review| %>
   <div class="box-review">
     <div class="review-title"> <%= review.title %></div>
+    <ul class="list-inline product-controls hidden-sm hidden-xs review-dashboard-rating">
+      <% review.rating.times do %>
+          <i class="fa fa-star" style="color: #ffb400"></i>
+        <% end %>
+        <% (5 - review.rating).times do %>
+         <i class="fa fa-star" style="color: gray"></i>
+        <% end %>
+    </ul>
     <div class="review-description"> <%= review.description %></div>
-    <p><%= review.rating %></p>
+
     <div class= "edit-reviews-pencil">
       <%= link_to edit_review_path(review) do %>
         <i class="fa fa-pencil" aria-hidden="true"></i>
