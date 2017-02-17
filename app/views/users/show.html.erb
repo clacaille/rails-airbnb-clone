@@ -4,18 +4,22 @@
     <%= cl_image_tag photo, class: "avatar-account pic-account" %>
 
     <div class="user-infos">
+<<<<<<< HEAD
       <div class="h1 block"> <%= @user.first_name %> <%= @user.last_name %> </h1>
+=======
+      <div class="h1 block"> <%= @user.first_name %> <%= @user.last_name %>   </div>
+>>>>>>> 3346464ec124a05169851809fa731fab063b8021
       <div class="edit-pencil-profile block">
      <%= link_to edit_user_path(@user) do%>
        <i class="fa fa-pencil edit-pencil-profile" aria-hidden="true"></i>
       <% end %>
     </div>
+    </h1>
     </div>
 
 
   </div>
 </div>
-
 
 
 <div class="container">

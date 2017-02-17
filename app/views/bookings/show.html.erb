@@ -1,17 +1,32 @@
+<% photo = @booking.camp.photo %>
+<div class="banner-detail" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= photo %>');">
+  <div class="banner-content">
+    <h1><%= @booking.camp.title %></h1>
+  </div>
+</div>
+
 
 <div class="btn btn-info"><i class="fa fa-chevron-left" aria-hidden="true"></i><%= link_to ' Back to My Bookings', user_path(current_user) %></div>
 
-<div class="container">
+
+<div class="container detail-intro">
   <div class="row">
-
-    <div class= "col-md-6 camp-summary">
+    <div class= "col-sm-9 col-xs-12 camp-summary">
       <h1><%= @booking.camp.title %></h1>
+      <div class="description-look"> <%= @booking.camp.address %></div>
+   </div>
 
-      <div class="description-look"><%= @booking.camp.address %></div>
-      <div class="description-look"><%= @booking.camp.description %></div>
-      <div class="price-look"><%= @booking.camp.price %> $</div>
-    </div>
-    <div class="col-md-6 book-recap">
+   <div class= "col-sm-3 col-xs-12 price-box-container">
+    <div class="price-look text-center"><%= @booking.camp.price %>$</div>
+  </div>
+</div>
+</div>
+<!-- Booking info-->
+<div class="container description-camp">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Info booking:</h3>
+          <div class="col-md-6 book-recap">
       <p> Start date :
           <%= @booking.start_date.strftime('%d/%m/%Y')  %></p>
       <p> End date:
@@ -19,32 +34,47 @@
       <p> Number of surfers:   <%= @booking.surfers %> </p>
     </div>
 
+    </div>
+  </div>
+</div>
+<!-- Description -->
+<div class="container description-camp">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Description:</h3>
+      <p><%= @booking.camp.description %></p>
+    </div>
+  </div>
+</div>
+<!-- Reviews -->
+<div class="container reviews-camp">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Reviews:</h3>
+      <% @booking.camp.reviews.each do |review| %>
+      <div class="review">
+        <div class='avatar-review'>
+        <%= image_tag(review.user.photo, class: "avatar-review") %>
+        </div>
+        <div class='review-body'>
+          <h3><%= review.title %></h3>
+          <p><%= review.description %></p>
+        </div>
+        <ul class="list-inline product-controls hidden-sm hidden-xs">
+          <% review.rating.times do %>
+              <i class="fa fa-star" style="color: #ffb400"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+             <i class="fa fa-star" style="color: gray"></i>
+            <% end %>
+        </ul>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
 
-
-<div id="map" style="width: 100%; height: 600px;"></div>
-
-
-<!-- Js mapping -->
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function() {
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
-        }
-      });
-    });
-  <% end %>
-<% end %>
 
 
 
