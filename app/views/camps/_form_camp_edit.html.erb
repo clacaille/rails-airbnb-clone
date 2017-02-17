@@ -1,0 +1,13 @@
+<%= simple_form_for(@camp) do |f| %>
+  <%= f.input :title, :class => "form-field" %>
+  <%= f.input :description, :class => "form-field" %>
+  <%= f.input :price, :class => "form-field" %>
+  <%= f.input :address, :class => "form-field" %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+<%= content_for(:after_js) do %>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyC2zSE6-EimDEK0MPllX3I8c8g5lNQckWI"></script>
+<% end %>
