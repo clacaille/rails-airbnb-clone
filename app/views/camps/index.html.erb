@@ -1,8 +1,8 @@
 
 <div class="search-list">
  <div class="sw">
-    <form>
-      <input type="search" class="search-detail" placeholder="Search..." />
+    <form action='filter'>
+      <input type="search" name="search" class="search-detail" placeholder="<%= params[:search] %>" />
       <button class="go"><span class="entypo-search"></span></button>
       <a href="#" class="logo" title="GMRUI"></a>
     </form>
