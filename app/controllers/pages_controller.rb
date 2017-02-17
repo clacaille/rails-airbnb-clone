@@ -25,14 +25,14 @@ class PagesController < ApplicationController
     radius = !params[:radius_km].blank? ? params[:radius_km] : 2000
     result = Geocoder.search(params[:search]).first
     case result.data["types"].first
-    when "country" != 'australia' && 'usa'
+    when "country" !="australia"
       @camps = Camp.near(params[:search], 500)
     when "continent"
       @camps = Camp.near(params[:search], radius)
     when "locality"
       @camps = Camp.near(params[:search], 20)
     else
-      @camps = Camp.near(params[:search], 100)
+      @camps = Camp.near(params[:search], 1600)
     end
     @hash = Gmaps4rails.build_markers(@camps) do |camp, marker|
       marker.lat camp.latitude
