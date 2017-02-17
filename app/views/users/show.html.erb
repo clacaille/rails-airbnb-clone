@@ -1,11 +1,17 @@
 <div class="container">
   <div class="banner-user">
-    <% photo = @user.photo || @user.facebook_picture_url %>
+  <% if !current_user.facebook_picture_url.nil? %>
+      <% photo = current_user.facebook_picture_url %>
+    <%elsif !current_user.photo.nil? %>
+        <% photo = current_user.photo %>
+    <% else %>
+      <% photo = "http://placehold.it/30x30" %>
+    <% end %>
     <%= cl_image_tag photo, class: "avatar-account pic-account" %>
 
     <div class="user-infos">
 
-      <div class="h1 block"> <%= @user.first_name %> <%= @user.last_name %>   </div>
+      <div class="h1 block"> <%= @user.first_name %> <%= @user.last_name %photo
 
       <div class="edit-pencil-profile block">
      <%= link_to edit_user_path(@user) do%>
