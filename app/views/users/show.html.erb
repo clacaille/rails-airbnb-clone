@@ -1,14 +1,13 @@
 <div class="container">
-
   <div class="banner-user">
-    <h1>My Profile</h1>
     <% photo = @user.photo || @user.facebook_picture_url %>
     <%= cl_image_tag photo, class: "avatar-account pic-account" %>
 
     <div class="user-infos">
       <h1> <%= @user.first_name %> <%= @user.last_name %> </h1>
     </div>
-    <div class="profil-edit">
+
+    <div class="edit-pencil-profile">
      <%= link_to edit_user_path(@user) do%>
        <i class="fa fa-pencil" aria-hidden="true"></i>
       <% end %>
@@ -19,50 +18,35 @@
 
 
 <div class="container">
-<div class="tabs-back">
-  <div class="tabs" id="tabs">
-    <a class="tab active" data-target="#my-bookings">
-      <h3>My Bookings</h3>
-      <p><%= @user.bookings.count %></p>
-    </a>
-    <a class="tab" data-target="#my-camps">
-      <h3>My Camps</h3>
-      <p><%= @user.camps.count %></p>
-    </a>
-    <a class="tab" data-target="#my-reviews">
-      <h3>My Reviews</h3>
-      <p><%= @user.reviews.count %></p>
-    </a>
-  </div>
-
-
-
-      <div class="tab-content" id="my-bookings">
-        <%= render 'bookings/index' %>
-      </div>
-      <div class="tab-content hidden" id="my-camps">
-        <%= render 'pages/my_camps' %>
-      </div>
-      <div class="tab-content hidden" id="my-reviews">
-        <% @user.reviews.each do |review| %>
-            <h4> <%= review.title %></h4>
-            <p> <%= review.description %></p>
-            <p><%= review.rating %></p>
-            <div>
-              <%= link_to edit_review_path(review) do %>
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-              <% end %>
-            </div>
-            <div>
-              <%= link_to review_path(review), method: :delete, data: {confirm: "Are you sure you want to delete this review?"} do %>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-              <% end %>
-            </div>
-        <% end %>
-      </div>
-
+  <div class="tabs-back">
+    <div class="tabs" id="tabs">
+      <a class="tab active" data-target="#my-bookings">
+        <h3>My Bookings</h3>
+        <p><%= @user.bookings.count %></p>
+      </a>
+      <a class="tab" data-target="#my-camps">
+        <h3>My Camps</h3>
+        <p><%= @user.camps.count %></p>
+      </a>
+      <a class="tab" data-target="#my-reviews">
+        <h3>My Reviews</h3>
+        <p><%= @user.reviews.count %></p>
+      </a>
     </div>
+
+    <div class="tab-content" id="my-bookings">
+      <%= render 'bookings/index' %>
+    </div>
+    <div class="tab-content hidden" id="my-camps">
+      <%= render 'pages/my_camps' %>
+    </div>
+    <div class="tab-content hidden" id="my-reviews">
+      <%= render 'reviews/my_reviews' %>
+    </div>
+
   </div>
+</div>
+
 
 
 

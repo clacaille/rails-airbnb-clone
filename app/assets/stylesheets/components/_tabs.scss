@@ -26,7 +26,12 @@
   text-align: center;
   padding: 20px 0;
   color: #4D5052;
-  background-color: #E6E6E6;
+  background-color: #F9F9F9;
+}
+
+.tab.active {
+  background:white;
+  box-shadow: 2px 4px 2px #7098DA;
 }
 
 .tab h3{
@@ -36,17 +41,20 @@
 .tab:first-child {
   border-radius: 4px 0 0 0;
 }
+
+
 .tab:last-child {
   border-radius: 0 4px 0 0;
 }
-.tab.active {
-  background:white;
-  box-shadow: -2px 2px 2px #7098DA;
-}
 
 .tab.active h3{
-  color: #6638F0;
+  color: #F55BF5;
   font-weight: bolder;
+  font-size: 20px;
+}
+
+.tab.active p{
+  font-weight: bold;
   font-size: 20px;
 }
 

@@ -1,19 +1,28 @@
-<% @bookings.each do |booking| %>
-  <%= link_to booking_path(booking) do %>
-    <div class="card-prof">
-      <div class="card-title"><%= booking.camp.title %></div>
-      <div class="card-date">
-      From :
-        <%= booking.start_date.strftime('%d/%m/%Y') %>
-       to :
-        <%= booking.end_date.strftime('%d/%m/%Y') %>
-      </div>
-      <br>
-      <div class="card-accepted">Reservation <%= elper(booking) %> for <%= booking.camp.price %> $</div>
 
-       <div class="btn btn-primary card-prof-btn"><%= link_to 'Add a review', new_camp_review_path(booking.camp) %></div>
-     </div>
-  <% end %>
+<% @bookings.each do |booking| %>
+ <%= link_to booking_path(booking) do %>
+
+     <% if booking.camp.photo? %>
+      <div class="card-prof" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path booking.camp.photo %>');">
+    <% else %>
+      <div class="card-prof" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path 'background.png' %>'); background-position: 1% 25%;">
+
+    <% end %>
+         <div class="card-title"><%= booking.camp.title %></div>
+         <div class="card-date">
+         From :
+           <%= booking.start_date.strftime('%d/%m/%Y') %>
+          to :
+           <%= booking.end_date.strftime('%d/%m/%Y') %>
+         </div>
+         <div class="card-accepted">Reservation <%= elper(booking) %> for <%= booking.camp.price %> $</div>
+          <div class="btn btn-primary card-prof-btn"><%= link_to 'Add a review', new_camp_review_path(booking.camp) %></div>
+      </div>
+ <% end %>
 <% end %>
+
+
+
+
 
 
