@@ -48,14 +48,6 @@ class PagesController < ApplicationController
 
   end
 
-  # def gmaps4rails_marker_picture
-  #   {
-  #   "picture" => '/asset/marker.png',          # string,  mandatory
-  #    "width" =>  50,          # integer, mandatory
-  #    "height" => 100,          # integer, mandatory
-  #  }
-  # end
-
 
  private
 
