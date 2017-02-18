@@ -1,7 +1,5 @@
 
 <% @bookings.each do |booking| %>
-
-
      <% if booking.camp.photo? %>
       <div class="card-prof" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path booking.camp.photo %>');">
     <% else %>
@@ -21,26 +19,24 @@
           <button type="button" class="btn btn-primary card-prof-btn" data-toggle="modal" data-target="#booking-modal-<%= booking.id %>">Add a review</button>
 
           <%= link_to "", booking_path(booking), class: "link-card-prof" %>
+    </div>
+  <!-- Modal -->
+  <div id="booking-modal-<%= booking.id %>" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+     <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add a review</h4>
+        </div>
+        <div class="modal-body">
+            <%= render 'reviews/form', camp: booking.camp %>
+        </div>
+
+      </div>
 
     </div>
-          <!-- Modal -->
-          <div id="booking-modal-<%= booking.id %>" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Add a review</h4>
-                </div>
-                <div class="modal-body">
-                    <%= render 'reviews/form', camp: booking.camp %>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
+  </div>
 <% end %>
 
 
